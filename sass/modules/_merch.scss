@@ -1,0 +1,262 @@
+.lightBox {
+    display: none;
+}
+
+#merchMainCon {
+    display: flex;
+    padding: 40px 10px 100px 10px;
+    flex-direction: column;
+}
+
+#merchGallery {
+    display: flex;
+    flex-direction: column;
+    /* make it show only 1 image*/
+}
+
+.textZoomCon {
+    display: none;
+}
+
+/*.galleryImagesCon {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    margin-bottom: 40px;
+}*/
+
+/*.galleryImageCon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}*/
+
+.galleryImage {
+    flex: 0 1 600px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.galleryThumbnails {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.galleryThumbnails img {
+    margin: 0px 10px;
+    background-color: skyblue;
+    height: 50px;
+    flex: 0 0 auto;
+}
+
+.galleryThumbnails img:first-child {
+    margin-left: 0;
+}
+
+.galleryThumbnails img:last-child {
+    margin-right: 0;
+}
+
+.galleryThumbnails img:active {
+    cursor: pointer;
+}
+
+#merchDesc {
+    display: flex;
+    flex-direction: column;
+}
+
+#merchDesc h3 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+#merchDesc h4 {
+    margin-bottom: 30px;
+}
+
+#merchDesc h5 {
+    margin-bottom: 20px;
+}
+
+#merchDesc p {
+    text-align: justify;
+    padding: 0 10px;
+}
+
+#merchForm {
+    display: flex;
+    flex: 1;
+/*		background-color: pink;*/
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+#merchForm input {
+    align-self: center;
+}
+
+#merchForm input[type="submit"] {
+    flex: 1;
+    /* matches btnAnimateCon */
+    min-width: 200px;
+}
+
+#merchForm input[type="number"] {
+    height: 40px;
+    width: 50px;
+    border: 2px #587021 solid;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Lato', 'Open Sans', 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.priceFormCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 420px) {
+	.galleryThumbnails img {
+		margin: 0px 10px;
+		height: 70px;
+	}
+}
+
+@media screen and (min-width: 670px) {
+	#merchGallery {
+		display: flex;
+		flex-direction: column;
+		/* make it show only 1 image*/
+		max-width: 618px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 768px) {
+    #merchMainCon {
+		padding: 40px 40px 100px 40px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 938px) {
+    .lightBox {
+		width: 100%;
+		height: 780px;
+		background-color: rgba(0,0,0,.9);
+		position: absolute;
+		top: 700px;
+		left: 0px;
+		display: none;
+		z-index: 2;
+	}
+
+	.lightBoxImages {
+		margin: auto;
+		width: 700px;
+		overflow: hidden;
+	}
+
+	.active {
+		height: 350px;
+	}
+
+	.active img {
+		position: absolute;
+		top: -1800px;
+	}
+
+	.active img.currentImage {
+		position: absolute;
+		top: 200px;
+	}
+
+	.lightBox i {
+		margin: auto;
+	}
+
+	#closeLightBox {
+		font-family: 'Lato', 'Open Sans', 'Arial', sans-serif;
+		color: #fff;
+		font-size: 40px;
+		position: absolute;
+		top:90px;
+		right: 40px;
+		cursor: pointer;
+	}
+
+	.showLightBox {
+		display: flex;
+	}
+
+	.galleryImagesCon:hover .galleryArrows {
+		opacity: 1;
+	}
+
+	.galleryArrows {
+		display: flex;
+		left: 0;
+		right: 0;
+		position: absolute;
+		justify-content: space-between;
+		padding: 0px 10px;
+		opacity: 0;
+		transition: all .5s ease;
+	}
+
+	.galleryArrow {
+		display: block;
+		font-size: 6em;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.textZoomCon {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.zoomIcon {
+		font-size: 1em;
+		color: #666;
+		display: inline;
+		margin-left: 10px;
+	}
+
+	#merchMainCon {
+		flex-direction: row;
+		padding: 40px 60px 100px 60px;
+	}
+
+	#merchDesc {
+		margin-left: 40px;
+		width: 45%;
+	}
+
+	// #merchGallery {
+	// 	max-width: 55%;
+	// }
+
+	.galleryThumbnails img:hover {
+		cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 1165px) {
+	#merchDesc h5 {
+		margin-right: 40px;
+		margin-bottom: 0;
+	}
+}

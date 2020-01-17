@@ -1,0 +1,631 @@
+#tagline {
+	margin: 35px auto;
+	text-align: center;
+	padding: 0px 30px;
+}
+
+#tagline p {
+	font-size: 18px;
+}
+
+/* Mission Statements - MOBILE */
+
+#mission {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#mission h2 {
+	margin-bottom: 35px;
+}
+
+.statementsCon {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.missionStatement {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 60px;
+	max-width: 335px;
+	background-color: #fff;
+	border-bottom: 3px #666 solid;
+}
+
+.missionStatement:last-child {
+	border-bottom: none;
+}
+
+#missionStatementIcon1 {
+	width: 110px;
+}
+
+#missionStatementIcon2 {
+	width: 106px;
+}
+
+#missionStatementIcon3 {
+	width: 144px;
+}
+
+#missionStatementIcon4 {
+	width: 85px;
+}
+
+#missionStatementIcon5 {
+	width: 118px;
+}
+
+#missionStatementIcon6 {
+	width: 168px;
+	margin-bottom: 30px;
+}
+
+.missionStatement p {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.animationTitle {
+	display: none;
+}
+
+/* History - MOBILE */
+
+#history {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 35px 10px;
+	background-color: #587021;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2392bd2f' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-attachment: fixed;
+}
+
+#history h2{
+	color: #fff;
+}
+
+#historyCon {
+	display: flex;
+	flex-direction: column;
+	margin-top: 35px;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px
+}
+
+.historyEntry {
+	display: flex;
+}
+
+.historyYear {
+	display: flex;
+	align-items: center;
+	border-right: 3px #fff solid;
+	padding: 40px 0px;
+}
+
+.yearCircle {
+	max-height: 65px;
+	width: 65px;
+	border-radius: 65px;
+	line-height: 65px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ececec;
+	position: relative;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	color: #587021;
+	font-size: 18px;
+}
+
+.yearLine {
+	width: 10px;
+	height: 3px;
+	background-color: #fff;
+}
+
+.descBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	text-align: justify-all;
+	background-color: #ececec;
+	position: relative;
+	padding: 20px;
+	font-family: 'Lato', 'Open Sans', 'Arial', sans-serif;
+	color: #666;
+	margin: 30px 0px 30px 10px;
+}
+
+/* Team - MOBILE */
+
+#team {
+	padding: 35px 0px;
+}
+
+#team h2 {
+	margin-bottom: 35px;
+}
+
+#teamStatement {
+	text-align: justify;
+	padding: 0px 10px;
+}
+
+#executives {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/* factors in margin on cards */
+	margin-top: 25px;
+	flex-wrap: wrap;
+}
+
+#volunteers {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/* factors in margin on cards */
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.member {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	margin: 10px;
+	flex: 1 1 330px;
+}
+
+.membersCard {
+	display: flex;
+	max-height: 298px;
+	flex: 1 1 330px;
+	justify-content: center;
+	align-items: center;
+	background-color: #587021;
+	margin: 10px;
+	padding: 10px 0px;
+}
+
+.membersCard h3{
+	color: #fff;
+}
+
+.memberName {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 40px 20px;
+	background-color: #587021;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2392bd2f' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-attachment: fixed;
+}
+
+.memberName p {
+	color: #fff;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.memberTitle {
+	padding: 20px 40px;
+	text-align: center;
+	box-sizing: border-box;
+	box-shadow: 0px 3px 3.84px 0.16px rgba(31, 29, 30, 0.34);
+}
+
+@media screen and (min-width: 670px) {
+	.statementsCon {
+		margin-bottom: 35px;
+	}
+
+	.missionStatement:nth-child(5) {
+		border-bottom: none;
+	}
+
+	.missionStatement:nth-child(odd) {
+		border-right: 3px #666 solid;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #history {
+		padding: 40px;
+	}
+
+	#historyCon {
+		margin-top: 40px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.historyYear {
+		padding: 40px 0px;
+	}
+
+	.yearCircle {
+		max-height: 100px;
+		width: 100px;
+		border-radius: 100px;
+		line-height: 100px;
+		font-size: 30px;
+	}
+
+	.yearLine {
+		width: 40px;
+	}
+
+	.descBox {
+		text-align: center;
+		margin: 20px 40px 20px 40px;
+		/* has flex, used inspector tools, took max-width of box without shifting*/
+		box-sizing: border-box;
+/*		min-width: 484px;*/
+		/* same as statements*/
+		width: 330px;
+	}
+
+	.historyEntry:nth-child(even) .descBox {
+		order: -1;
+		margin-left: 40px;
+		margin-right: 0px;
+	}
+
+	.historyEntry:nth-child(even) .historyYear {
+		border-right: none;
+		border-left: 3px #fff solid;
+		margin-left: 40px;
+/*		margin-right: 424px;*/
+		margin-right: 270px;
+	}
+
+/*	.historyEntry:nth-child(odd) .historyYear {
+		margin-left: 427px;
+	}*/
+
+	.historyEntry:nth-child(odd) .historyYear {
+		margin-left: 270px;
+	}
+
+	.historyEntry:nth-child(even) .yearCircle {
+		order: 2;
+	}
+
+	/* Team - TABLET */
+
+	#team {
+		/* factors in margins on cards (10px + 30px =40px)*/
+		padding: 30px;
+	}
+
+		#team p {
+		text-align: center;
+	}
+		.missionStatement {
+		margin: 20px;
+		box-shadow: 0px 4px 7.68px 0.32px rgba(31, 29, 30, 0.34);
+		border-bottom: none;
+	}
+
+	/* must select it this way to work*/
+	.missionStatement:nth-child(odd) {
+		border-right: none;
+	}
+}
+
+@media screen and (min-width: 938px) {
+    #tagline {
+		margin: 40px auto;
+		padding: 0;
+	}
+
+	#tagline p {
+		font-size: 18px;
+	}
+
+	/* Mission Statements */
+
+	#mission {
+		padding: 0px 40px;
+	}
+
+	#mission h2 {
+		margin-bottom: 40px;
+	}
+
+	.statementsCon {
+		margin-bottom: 40px;
+	}
+
+	.missionStatement:nth-child(2), .missionStatement:nth-child(5) {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	.missionStatement {
+		margin: 20px;
+	}
+
+		/* Animations */
+
+	.arrowUp {
+		border: solid #fff;
+		border-width: 0 5px 5px 0;
+		border-radius: 2px;
+		display: inline-block;
+		padding: 5px;
+		-webkit-transform: rotate(-135deg);
+		-ms-transform: rotate(-135deg);
+		transform: rotate(-135deg);
+		margin-top: 13px;
+	}
+
+	.animationCon {
+		display: flex;
+		flex-direction: column;
+	  	position: relative;
+		flex: 1;
+		/* hides initial height */
+		overflow: hidden;
+		min-width: 335px;
+		justify-content: center;
+	}
+
+	.animationOverlay {
+		position: absolute;
+		/*positions bottom of overlay*/
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: #587021;
+		overflow: hidden;
+		width: 100%;
+		/* how much height to show initially */
+		height: 10%;
+		transition: 1s ease;
+		text-align: center;
+	}
+
+	.animationOverlay2 {
+		background-color: #92bd2f;
+		opacity: 0.7;
+		transition: 1.5s ease;
+		transition-delay: -2s;
+		height: 0%;
+	}
+
+	.animationTitle {
+		display: block;
+		position: absolute;
+		top: 75%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		text-align: center;
+		-webkit-animation: title-fade-down 1s ease-in-out forwards;
+		animation: title-fade-down 1s ease-in-out forwards;
+		font-size: 24px;
+	}
+
+	.animationText {
+		color: #fff;
+		position: absolute;
+		top: 120%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		-webkit-animation: text-fade-down 1.5s ease forwards;
+		animation: text-fade-down 1.5s ease forwards;
+		width: 230px;
+	}
+
+	.animationIcon {
+		margin-bottom: 60px;
+	}
+
+	/*animation: [animation-name] [animation-duration] [animation-timing-function]
+	[animation-delay] [animation-iteration-count] [animation-direction]*/
+	.animationCon:hover .animationTitle {
+		/* forwards makes text stay at 100% on first iteration instead of reverting to 0%*/
+		-webkit-animation: title-fade-up 1s ease-in-out forwards .5s;
+		animation: title-fade-up 1s ease-in-out forwards .5s;
+	}
+
+	.animationCon:hover .animationText {
+		-webkit-animation: text-fade-up 1.5s ease forwards .5s;
+		animation: text-fade-up 1.5s ease forwards .5s;
+	}
+
+	.animationCon:hover .animationOverlay {
+		/* returns height to full (add initial height to overflow)*/
+		height: 110%;
+		transition-delay: .3s;
+	}
+
+	.animationCon:hover .animationIcon {
+		opacity: 0;
+		transition: 1s;
+	}
+
+	/* match initial values for top */
+
+	@-webkit-keyframes title-fade-up {
+		0% {
+			top: 75%;
+		}
+		100% {
+			top: 30%;
+			color: #fff;
+		}
+	}
+
+	@keyframes title-fade-up {
+		0% {
+			top: 75%;
+		}
+		100% {
+			top: 30%;
+			color: #fff;
+		}
+	}
+
+	@-webkit-keyframes title-fade-down {
+		0% {
+			top: 30%;
+		}
+		100% {
+			top: 75%;
+		}
+	}
+
+	@keyframes title-fade-down {
+		0% {
+			top: 30%;
+		}
+		100% {
+			top: 75%;
+		}
+	}
+
+	@-webkit-keyframes text-fade-up {
+		0% {
+			top: 120%;
+		}
+		30% {
+			opacity: 0;
+		}
+		100% {
+			top: 55%;
+			opacity: 1;
+		}
+	}
+
+	@keyframes text-fade-up {
+		0% {
+			top: 120%;
+		}
+		30% {
+			opacity: 0;
+		}
+		100% {
+			top: 55%;
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes text-fade-down {
+		0% {
+			top: 55%;
+			opacity: 1;
+		}
+		30% {
+			opacity: 0;
+		}
+		100% {
+			top: 120%;
+			opacity: 0;
+		}
+	}
+
+	@keyframes text-fade-down {
+		0% {
+			top: 55%;
+			opacity: 1;
+		}
+		30% {
+			opacity: 0;
+		}
+		100% {
+			top: 120%;
+			opacity: 0;
+		}
+	}
+
+	/* Team - DESKTOP */
+
+	#team {
+		/* factors in margins on cards (10px + 50px =60px)*/
+		/* + extra added padding so it changes to 2 columns with the mission statements*/
+		padding: 58px;
+	}
+
+	#executives {
+		/* factors in margins on cards (10px + 30px =40px)*/
+		margin-top: 30px;
+	}
+
+	#volunteers {
+		margin-top: 30px;
+	}
+
+	.member {
+		flex: none;
+	}
+	
+	.membersCard {
+		background-color: #587021;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2392bd2f' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+		background-attachment: fixed;
+		flex: 0 1 330px;
+	}
+
+	.memberName {
+		background-color: #587021;
+		background-image: none;
+		width: 330px;
+	}
+
+	.memberTitle {
+		max-width: 330px;
+	}
+}
+
+@media screen and (min-width: 1164px) {
+
+	/* History - DESKTOP */
+
+	#history {
+		padding: 73px;
+	}
+
+	.descBox {
+		min-width: 484px;
+	}
+
+	.historyEntry:nth-child(even) .historyYear {
+		margin-right: 421px;
+	}
+
+	.historyEntry:nth-child(odd) .historyYear {
+		margin-left: 427px;
+	}
+
+	/* spacing between About page statements */
+	.missionStatement:nth-child(2), .missionStatement:nth-child(5) {
+		margin-right: 40px;
+		margin-left: 40px;
+	}
+
+	.missionStatement {
+		margin: 20px 0;
+	}
+}

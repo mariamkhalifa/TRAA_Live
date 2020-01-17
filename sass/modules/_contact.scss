@@ -1,0 +1,195 @@
+#mainContact {
+	padding: 0px 10px;
+}
+
+#mainContact h3 {
+	margin-top: 40px;
+}
+
+#mainContact p {
+	padding: 15px 10px;
+	text-align: center;
+}
+
+#announcement {
+	display: none;
+}
+
+#addresses {
+	display: block;
+	/*flex-direction: column;
+	vertical-align: center;*/
+}
+
+.addressesCon {
+	margin-top: 40px;
+	flex: 1 0 350px;
+}
+
+.addressesCon h4 {
+	text-align: center;
+}
+
+.addressesCon img {
+	width: auto;
+	height: 20px;
+	margin-right: 8px;
+}
+
+#contactForm {
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nameEmailCon {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#contactForm input {
+	flex: 1;
+}
+
+#contactForm input[type="text"], #contactForm input[type="email"], textarea {
+/*	width: 85%;*/
+	font-size: 14px;
+	border: 1px solid #4f641d;
+	padding: 10px;
+	margin-bottom: 15px;
+/*	margin-right: auto;
+	margin-left: auto;*/
+}
+
+#contactForm .btnAnimateCon {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#mapArea {
+	margin: 80px auto;
+}
+
+#mapArea iframe {
+	width: 100%;
+	height: 300px;
+}
+
+/*#eventsWidget {
+	display: none;
+}*/
+
+@media screen and (min-width: 518px) {
+
+	.nameEmailCon input[type="text"]{
+		margin-right: 15px;
+	}
+}
+
+@media screen and (min-width: 699px) {
+
+	.addressesCon:first-child {
+		border-right: #666 2px solid;
+	}
+
+	#mainContact p {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+    .heroContact {
+        background-image: linear-gradient(rgba(79,100,29,.2), rgba(79,100,29,.2)), url(../images/contact_hero.jpg);
+        }
+    
+        #mainContact {
+            padding: 0px 40px;
+        }
+    
+        #addresses {
+        display: flex;
+        flex-wrap: nowrap;
+        }
+}
+
+@media screen and (min-width: 938px) {
+    #mainContact {
+        max-width: 1052px;
+        margin: 0 auto;
+    }
+
+  #announcement {
+      display: flex;
+      margin-top: 40px;
+      align-items: center;
+      background-color: rgba(79, 100, 29, .8);
+  }
+
+  #close {
+      display: flex;
+      background-color: rgba(79, 100, 29, .8);
+      padding: 30px 10px;
+      align-items: center;
+  }
+
+  #circle {
+      display: flex;
+      background-color: #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      color: #4f641d;
+      padding: 5px;
+      font-size: 12px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      align-self: flex-start;
+
+  }
+
+  #announcement a {
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      margin: 0 auto;
+  }
+
+  #contactForm {
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  #contactForm input[type="submit"] {
+      margin: 0;
+      /* matches btnAnimateCon*/
+      min-width: 200px;
+  }
+
+  #eventsWidget {
+      display: block;
+  }
+
+  #contactForm .btnCon {
+      justify-content: flex-end;
+  }
+
+  #contactForm .btnAnimateCon {
+      margin-right: 0;
+      margin-left: 0;
+      /* accounts for margin of 15px (25px + 15px = 40px)*/
+      margin-top: 25px;
+  }
+
+  #addresses {
+      flex-wrap: wrap;
+  }
+}

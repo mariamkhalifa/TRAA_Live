@@ -1,0 +1,172 @@
+@import '_vars';
+@import 'modules/_buttons';
+@import 'modules/_header';
+@import 'modules/_hero';
+@import 'modules/_home';
+@import 'modules/_projects';
+@import 'modules/_about';
+@import 'modules/_contact';
+@import 'modules/_join';
+@import 'modules/_blog';
+@import 'modules/_merch';
+@import 'modules/_footer';
+
+
+
+
+
+
+
+
+
+// CSS reset
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+// main
+
+img, embed, object, video {
+	max-width: 100%;
+	height: auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: $abolition;
+    color: $dark-green;
+}
+
+h2 {
+	font-size: 36px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 30px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+h4 {
+	font-size: 24px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+h5 {
+	font-size: 24px;
+	text-align: center;
+	text-transform: capitalize;
+	font-family: $lato;
+	color: $dark-green;
+}
+
+p {
+    font-family: $lato;
+    color: $dark-grey;
+    font-size: 16px;
+	line-height: 18px;
+}
+
+input, textarea {
+	color: $light-grey;
+}
+
+textarea {
+	font-family: $lato;
+}
+
+a {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.preventScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+#mainContainer {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	min-width: 320px;
+	/*set top margin to avoid content overlay*/
+	margin-top: 81px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	min-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (min-width: 938px) {
+
+	p {
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	#mainContainer {
+		margin-top: 200px;
+    }
+}
