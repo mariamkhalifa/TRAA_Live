@@ -1,0 +1,395 @@
+#mainJoin h2 {
+	margin-top: 40px;
+}
+
+#mainJoin p {
+	padding: 40px 30px;
+	text-align: center;
+}
+
+#mainJoin a {
+	color: #666;
+	text-decoration: underline;
+}
+
+#priceCon {
+	display: flex;
+	flex-direction: column;
+}
+
+#membershipPrice {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background-color: #4f641d;
+	margin: 20px auto;
+	color: #fff;
+	font-size: 60px;
+	text-align: center;
+	line-height: 100px;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	position: relative;
+	z-index: 1;
+	top: -100px;
+}
+
+#joinInfo {
+	background-color: #92bd2f;
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	top: -170px;
+	z-index: 0;
+}
+
+#joinInfo p {
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	margin-top: 30px;
+	padding: 40px;
+}
+
+#joinInfo ul {
+	 list-style-image: url(../images/check.png);
+	 /*list-style-position: inside;*/
+	 /*margin-left: 60px;*/
+	 margin: 0 auto;
+	 padding-left: 60px;
+}
+
+#joinInfo ul li {
+	margin: 0 auto;
+	color: #fff;
+	padding: 3px 20px;
+}
+
+#joinInfo li:last-child {
+	margin-bottom: 50px;
+}
+
+#joinProcess {
+	display: flex;
+	width: 80%;
+	margin: 20px auto;
+	position: relative;
+	top: 500px;
+}
+
+.processOrder {
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+}
+
+.circle {
+	margin: 0 auto;
+	background-color: #4f641d;
+	width: 30px;
+	height: 30px;
+	border-radius: 100px;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 30px;
+	padding: 2px;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;  
+}
+
+.processOrder p {
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	color: #4f641d;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.connector {
+	width: 20%;
+	height: 2px;
+	background-color: #666;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#joinInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+#joinForm {
+	display: flex;
+	flex-direction: column;
+/*	max-width: 500px;*/
+	margin: 0 auto;
+	flex: 1;
+}
+
+#joinForm a {
+	color: #666;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	font-size: 18px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+#joinForm p {
+	padding: 10px;
+}
+
+#membershipForm label {
+	text-transform: uppercase;
+	font-size: 18px;
+	display: block;
+	color: #587021;
+}
+
+#membershipForm {
+	display: flex;
+	flex-direction: column;
+}
+
+#membershipForm input {
+	flex: 1;
+}
+
+#membershipForm input[type="text"], #membershipForm input[type="email"], #membershipForm input[type="tel"] {
+/*	width: 90%;*/
+	font-size: 14px;
+	border: 1px solid #4f641d;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+/*	margin-right: auto;
+	margin-left: auto;*/
+}
+
+#membershipForm .btnAnimateCon {
+	margin: 25px 0px 0px 0px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+#paperForm {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 40px;
+	flex-wrap: wrap;
+	background-color: #587021;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%2392bd2f' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+	background-attachment: fixed;
+	padding: 10px;
+}
+
+#paperForm h3 {
+	padding: 40px 0px;
+	color: #fff;
+}
+
+#paperForm p {
+	padding-bottom: 20px;
+	color: #fff;
+}
+
+#paperForm .btnLarge {
+	min-width: 200px;
+}
+
+#paperForm .btnCon {
+	/* accounts for padding on bottom of paperForm p*/
+	margin: 20px 0px;
+}
+
+#infoAndForm{
+	padding: 0px 10px;
+	margin: 0 auto;
+}
+
+#paperFormText {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media screen and (min-width: 420px) {
+	#joinProcess {
+		top: 470px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+    #infoAndForm{
+		padding: 0px 40px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 938px) {
+    #joinProcess {
+		position: static;
+	}
+
+	.circle {
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+		font-size: 26px;
+		line-height: 50px;
+	}
+
+	.connector {
+		width: 70%;
+	}
+
+	.processOrder p {
+		font-size: 22px;
+		padding-top: 8px;
+	}
+
+	#infoAndForm{
+		display: flex;
+		padding: 40px 60px 0px 60px;
+		margin: 0 auto;
+		max-width: 1052px;
+	}
+
+	#priceCon {
+		margin-right: 60px;
+	}
+
+	#membershipPrice {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: static;
+		padding: 50px;
+		border-radius: 200px;
+		font-size: 80px;
+	}
+
+	#joinInfo {
+		position: relative;
+		margin-top: 40px;
+	}
+
+	#joinInfo p {
+		margin-top: 120px;
+	}
+
+	#joinInfo ul {
+		margin-bottom: 20px;
+	}
+
+	#joinForm label {
+		margin-top: 20px;
+	}
+
+	#joinForm input {
+		margin-top: 15px;
+	}
+
+	#joinForm input:last-child {
+		margin-right: 18px;
+	}
+
+	/* makes sure send button (submit input) isn't selected to have margins*/
+
+	#joinForm input[type="submit"] {
+		margin: 0;
+		/* same size as btnAnimateCon */
+		min-width: 200px;
+	}
+
+	#joinForm .btnAnimateCon {
+		margin-left: auto;
+	}
+
+	#charts {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+		background-color: #587021;
+	}
+
+	#charts h3 {
+		color:#fff;
+		margin-top: 40px;
+	}
+
+	#chartRow {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-top: 40px;
+	}
+
+	.chartCon {
+		display: flex;
+		flex-direction: column;
+		width: 410px;
+	}
+
+	.chartRowImg {
+		width: 410px;
+	}
+
+	.chartCon p {
+		width: 410px;
+		color: #fff;
+		padding: 20px;
+		font-size: 16px;
+	}
+
+	#singleChart {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.chartImgSingle {
+		width: 641px;
+		margin: 0  auto;
+	}
+
+	#singleChart p {
+		color: #fff;
+		padding: 20px;
+		font-size: 16px;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+
+	#paperForm {
+		margin-top: 0;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#paperForm .btnCon {
+		margin-left: auto;
+		padding: 0px 40px;
+	}
+
+	#paperForm .btnAnimateCon {
+		margin: 0px;
+	}
+
+	#paperFormText {
+		margin: 20px auto 20px 40px;
+		border-right: 2px #fff solid;
+		flex: 1 1 490px;
+		align-items: stretch;
+	}
+
+	#paperFormText h3 {
+		text-align: left;
+	}
+
+	#paperForm a {
+		margin: auto;
+	}
+}

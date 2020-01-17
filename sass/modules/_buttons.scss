@@ -1,0 +1,301 @@
+btnCon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+}
+
+.btnSmall {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 30px;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+/*	height: 60px;*/
+/* padding(2) + fontsize = final height*/
+/* 18(2) + 24 = 60px */
+	padding: 18px 0px;
+	margin: 10px;
+	font-size: 24px;
+}
+
+.btnLarge {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+/*	height: 60px;*/
+/* padding(2) + fontsize = final height*/
+/* 15(2) + 30 = 60px */
+	padding: 15px 0px;
+	font-size: 30px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 25px;
+	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+}
+
+.dark {
+	background-color: #92bd2f;
+	color: #fff;
+}
+
+.light {
+	background-color: #666;
+	color: #fff;
+}
+
+
+.btnTop {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 40px 10px 40px auto;
+/*	background-color: gold;*/
+}
+
+.btnTop i {
+	font-size: 6em;
+	color: #587021;
+}
+
+.btnTop p {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #587021;
+	font-weight: bold;
+	text-align: center;
+}
+
+.btnTopBg {
+	padding: 0em 1em;
+	border-radius: 75px;
+	margin-bottom: 10px;
+}
+
+.btnDonate {
+	margin-bottom: 20px;
+}
+
+.subBut {
+	margin-left: 2px;
+	margin-right: 10px;
+	color: #fff;
+	height: 48px;
+	width: 38px;
+	border-radius: 0px 20px 20px 0px ;
+	box-sizing: border-box;
+}
+
+#actionBtns {
+	padding: 35px 0px;
+}
+
+#actionBtns a:nth-child(3) {
+	margin: 20px 0px;
+}
+
+.btnLarge:focus, .btnSmall:focus, .btnTopBg:focus, .subBut:focus{
+	transition: ease;
+	box-shadow: 0px 3px 4px 0px rgba(31, 29, 30, 0.35);
+	cursor: pointer;
+}
+
+.downArrow {
+	font-size: 6em;
+	color: #fff;
+	position: absolute;
+	top: 75%;
+	cursor: pointer;
+}
+
+/*Swing Button*/
+
+@-webkit-keyframes swing {
+    10% {
+        -webkit-transform: translateX(7px);
+    }
+    30% {
+        -webkit-transform: translateX(-7px);
+    } 
+    50% {
+        -webkit-transform: translateX(7px);
+    } 
+
+    70%
+    {
+        -webkit-transform: translateX(-7px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+    }
+}
+@keyframes swing {
+    10% {
+        transform: translateX(7px);
+    }
+    30% {
+       transform: translateX(-7px);
+    } 
+    50% {
+       transform: translateX(7px);
+    } 
+
+    70%
+    {
+        transform: translateX(-7px);
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+
+.swing:active
+{
+        -webkit-animation: swing .3s ease;
+        animation: swing .3s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 938px) {
+    .btnSmall {
+		/*	height: 40px;*/
+/* padding(2) + fontsize = final height*/
+/* 8(2) + 24 = 40px */
+	padding: 8px 0px;
+	margin: 10px;
+		flex: 1;
+		max-width: 200px;
+		margin: 0px;
+		font-size: 24px;
+	}
+
+	.btnLarge {
+	/*	height: 60px;*/
+	/* padding(2) + fontsize = final height*/
+	/* 18(2) + 24 = 60px */
+	padding: 18px 0px;
+		flex: 1;
+		max-width: 200px;
+		font-size: 24px;
+	}
+
+	.dark:hover {
+		background-color: rgba(104, 179, 0, 0.75);
+	}
+
+	.light:hover {
+		background-color: rgba(0, 0, 0, 0.57);
+	}
+
+	.btnCon {
+		flex-direction: row;
+	}
+
+	.subBut {
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 41px;
+	width: 41px;
+	}
+
+	#actionBtns {
+		display: none;
+	}
+
+	.btnDonate {
+		margin-left: 40px !important;
+		margin-right: 40px !important;
+	}
+
+	.btnLarge:hover, .btnSmall:hover, .btnTopBg:hover, .subBut:hover, #navJoin:hover{
+	transition: all .3s ease;
+	box-shadow: 0px 3px 4px 0px rgba(31, 29, 30, 0.35);
+	cursor: pointer;
+	}
+
+	.btnTop {
+	margin: 40px 60px 40px auto;
+	}
+
+	.btnTopBg {
+		margin-bottom: 0px;
+	}
+
+		/* button animations */
+
+	/* masks the background of the button */
+	.btnAnimateCon {
+		display: flex;
+		flex-direction: column;
+	    justify-content: center;
+	    flex: 1;
+		overflow: hidden;
+		position: relative;
+		/* matches largest button border radius (footer membership btn)*/
+		border-radius: 30px;
+		max-width: 200px;
+		transition: all .3s ease;
+		margin: 0px 12px;
+		/* important! puts buttons above background cards - makes sure you can see overlays underneath*/
+		z-index: 1;
+
+		/*effect works best on white background (putting it in container ensures white background)*/
+		background-color: #fff;
+		border: 1px #92bd2f solid;
+	}
+
+	.btnAnimateConTop {
+		border-radius: 75px;
+		margin-bottom: 10px;
+	}
+
+	.btnAnimateOverlay {
+		background-color: #587021;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		/* positioned to btnCon */
+		position: absolute;
+		z-index: -1;
+		/* preserve width*/
+		width: 100%;
+		height: 0%;
+		transition: .3s ease;
+		/* lighter overlay on bottom so top overlay is darker*/
+		opacity: 0.5;
+	}
+
+	.btnAnimateOverlay2 {
+		background-color: #587021;
+		transition: .3s ease;
+		transition-delay: .15s;
+	}
+
+	.btnTopBg i {
+		transition: color .3s ease;
+	}
+
+	.btnAnimateCon:hover {
+		box-shadow: 0px 3px 4px 0px rgba(31, 29, 30, 0.35);
+	}
+
+	.btnAnimateCon:hover .btnAnimateOverlay {
+		height: 100%;
+	}
+
+	.btnAnimateCon:hover .btnSmall, .btnAnimateCon:hover .btnLarge {
+		color: #fff;
+	}
+
+	.btnTopBg:hover > i {
+		color: #fff;
+	}
+}
