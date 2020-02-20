@@ -65,6 +65,9 @@
 	
 	<!-- JavaScript -->
 	<script src="js/products.js"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/skipHero.js"></script>
 	<script src="js/subNav_mobile.js"></script>
+	<script src="js/merchLightbox.js"></script>
 </body>
 </html>

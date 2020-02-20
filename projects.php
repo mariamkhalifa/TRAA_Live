@@ -75,7 +75,9 @@
 	<?php  include 'template/footer.php'; ?>
 
 	<!-- JavaScript -->
-	<script src="js/projects.js"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/skipHero.js"></script>
+	<script src="js/btnTop.js"></script>
 	<script src="js/subNav_mobile.js"></script>
 </body>
 </html>

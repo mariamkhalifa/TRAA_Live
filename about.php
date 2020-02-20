@@ -223,6 +223,8 @@
 	
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/skipHero.js"></script>
 	<script src="js/subNav_mobile.js"></script>
 </body>
 </html>

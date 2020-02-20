@@ -124,8 +124,10 @@
 	<?php  include 'template/footer.php'; ?>
 	
 	<!-- JavaScript -->
-	<script src="js/contact.js"></script>
+	<script src="js/nav.js"></script>
+	<script src="js/contactRemind.js"></script>
 	<script src="js/events_widget.js"></script>
+	<script src="js/skipHero.js"></script>
 	<script src="js/subNav_mobile.js"></script>
 </body>
 </html>
