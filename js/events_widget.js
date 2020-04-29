@@ -13,8 +13,8 @@
 	}
 
 
-	eventsArrowLeft.addEventListener('click', scrollEventsLeft);
-	eventsArrowRight.addEventListener('click', scrollEventsRight);
+	arrowLeft.addEventListener('click', scrollEventsLeft);
+	arrowRight.addEventListener('click', scrollEventsRight);
 
 
 })();
