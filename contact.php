@@ -1,3 +1,46 @@
+<?php
+	if(empty($_POST)){
+		$msg = 'Please fill out all the required fields...';
+	}
+	
+	$name = '';
+	$email = '';
+	$subject = '';
+	$message = '';
+	$recipient = 'traa@anglers.org';
+
+	if (isset($_POST['nameContact'])) {
+		$name = filter_var($_POST['nameContact'], FILTER_SANITIZE_STRING);
+	}
+	
+	if (isset($_POST['email'])) {
+	   $email = str_replace(array("\r", "\n", "%0a", "%0d"),'',$_POST['email']);
+	   $email = filter_var($email,FILTER_VALIDATE_EMAIL);
+	}
+
+	if (isset($_POST['subject'])) {
+		$subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+	}
+	
+	if (isset($_POST['message'])) {
+		$message = $_POST['message']; 
+	}
+
+	// $headers = array(
+	// 	'From'=>'no-reply@mariamkhalifa.ca',
+	// 	'Reply-To'=>$name.'<'.$email.'>'
+	// );
+	
+	//if(mail($recipient, $subject, $message, $headers)){
+	if (mail($recipient, $subject, $message)) {
+		$msg = 'Your email was sent. We will get back to you soon.';
+	}
+	else {
+		$msg = 'Sorry, the email did not go through!';
+	}
+	
+?>
+
 <?php  include 'template/header.php'; ?>
 
 		<section class="hero heroContact">
@@ -26,12 +69,15 @@
 			</div>
       
 			<div id="form">
-				<form id="contactForm" action="contact-form.php" method="post">
+				<form id="contactForm" action="contact.php" method="post">
 					<div class="nameEmailCon">
-						<input type="text" required id="nameContact" placeholder="name" size="30">
-						<input type="email" required id="email" placeholder="email" size="30">
+						<label for="nameContact"></label>
+						<input type="text" id="nameContact" name="name" placeholder="name" size="30">
+						<label for="email"></label>
+						<input type="email" id="email" name="email" placeholder="email" size="30">
 					</div>
-					<input type="text" required id="subject" placeholder="subject" size="30" list="subjectOptions">
+					<label for="subject"></label>
+					<input type="text" id="subject" name="subject" placeholder="subject" size="30" list="subjectOptions">
 
 					<datalist id="subjectOptions">
 					    <option value="Fundraising"></option>
@@ -40,15 +86,21 @@
 					    <option value="General Inquiry"></option>
 					</datalist>
 
-					<textarea id="message" required placeholder="leave a message" cols="32" rows="8"></textarea>
+					<label for="message"></label>
+					<textarea id="message" name="message" placeholder="leave a message" cols="32" rows="8"></textarea>
+					
 					<div class="btnCon">
 						<div class="btnAnimateCon">
-							<input type="submit" value="SEND" class="btnLarge light">
+							<input id="cont-submit" type="submit" value="SEND" class="btnLarge light">
 							<a href="#" class="btnAnimateOverlay"></a>
 							<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 						</div>
 					</div>
-				</form>
+
+					<div class="msg-popover">
+						<p><?php echo $msg; ?></p>
+					</div>
+				</form> <!-- end form -->
 			</div>
 		</section>
 
@@ -126,8 +178,12 @@
 	<!-- JavaScript -->
 	<script src="js/nav.js"></script>
 	<script src="js/contactRemind.js"></script>
+	<script src="js/contactPopover.js"></script>
 	<script src="js/events_widget.js"></script>
 	<script src="js/skipHero.js"></script>
 	<script src="js/subNav_mobile.js"></script>
 </body>
 </html>
+
+
+	

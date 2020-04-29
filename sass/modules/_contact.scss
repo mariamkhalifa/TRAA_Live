@@ -43,7 +43,8 @@
 	text-align: center;
 	max-width: 1200px;
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    position: relative;
 }
 
 .nameEmailCon {
@@ -70,6 +71,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+}
+
+.msg-popover {
+    display: none;
+}
+
+.msg-popover.show {
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(#000000, .7);
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    align-self: center;
+    display: grid;
+    align-items: center;
+    p {
+        color: white;
+        background-color: $dark-green;
+        padding: 30px !important;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+    }
 }
 
 #mapArea {
@@ -125,39 +151,41 @@
         margin: 0 auto;
     }
 
-  #announcement {
-      display: flex;
-      margin-top: 40px;
-      align-items: center;
-      background-color: rgba(79, 100, 29, .8);
-  }
+    #announcement {
+        display: flex;
+        margin-top: 40px;
+        align-items: center;
+        background-color: rgba(79, 100, 29, .8);
+    }
 
-  #close {
-      display: flex;
-      background-color: rgba(79, 100, 29, .8);
-      padding: 30px 10px;
-      align-items: center;
-  }
+    #close {
+        display: flex;
+        font-family: $lato;
+        background-color: rgba(79, 100, 29, .8);
+        padding: 30px 10px;
+        align-items: center;
+    }
 
-  #circle {
-      display: flex;
-      background-color: #fff;
-      width: 15px;
-      height: 15px;
-      border-radius: 15px;
-      color: #4f641d;
-      padding: 5px;
-      font-size: 12px;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      cursor: pointer;
-      align-self: flex-start;
+    #circle {
+        display: flex;
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        color: #4f641d;
+        padding: 5px;
+        font-size: 12px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        align-self: flex-start;
 
-  }
+    }
 
   #announcement a {
       color: #fff;
+      font-family: $lato;
       font-size: 14px;
       text-align: center;
       margin: 0 auto;
