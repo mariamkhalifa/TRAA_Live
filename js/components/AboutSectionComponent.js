@@ -5,29 +5,22 @@ export default {
 				<source media="(max-width: 600px)" srcset="images/home_about_small.jpg">
 				<img src="images/home_about.jpg" alt="River Image">
 			</picture>
+			
 			<div id="aboutCon">
-				<h2>ABOUT THE TRAA</h2>
-				<p id="aboutDesc">
-					We are a “hands on” environmental group who likes to work at a grass roots level.
-				</p>
+				<h2>{{ title }}</h2>
+				<p id="aboutDesc">{{ statement }}</p>
+
 				<section id="statements">
-				<h3 class="hidden">Mission Statements</h3>
-					<div class="statement">
-						<img id="homeAboutIconProtect" src="images/icon_fish_protect.svg" alt="We Protect">
-						<p class="statementTitle">WE PROTECT</p>
-						<p>Our fishery, river fish, and environment</p>
+					<h3 class="hidden">Mission Statements</h3>
+
+					<div v-for="(mission, index) in missions" class="statement">
+						<img id="homeAboutIconProtect" :src="'images/' + mission.icon" alt="We Protect">
+						<p class="statementTitle">{{ mission.title }}</p>
+						<p>{{ mission.desc }}</p>
 					</div>
-					<div class="statement">
-						<img id="homeAboutIconPromote" src="images/icon_angler.svg" alt="We Promote">
-						<p class="statementTitle">WE PROMOTE</p>
-						<p>Safe fishing practices, pollution control, and awareness</p>
-					</div>
-					<div class="statement">
-						<img id="homeAboutIconParticipate" src="images/icon_fish_sharing.svg" alt="We Participate">
-						<p class="statementTitle">WE PARTICIPATE</p>
-						<p>In rehabilitation, environmental clean-up, and our community</p>
-					</div>					
+									
 				</section>
+
 				<div class="btnCon">
 					<div class="btnAnimateCon">
 						<a href="join.html" class="btnSmall dark">JOIN US</a>
@@ -40,7 +33,20 @@ export default {
 						<a href="about.html" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 					</div>
 				</div>
+
 			</div>
 		</section>
-    `
+	`,
+	
+	data() {
+		return {
+			title: 'About The TRAA',
+			statement: 'We are a “hands on” environmental group who likes to work at a grass roots level.',
+			missions: [
+				{ icon: 'icon_fish_protect.svg"', title: 'WE PROTECT', desc: 'Our fishery, river fish, and environment' },
+				{ icon: 'icon_angler.svg', title: 'WE PROMOTE', desc: 'Safe fishing practices, pollution control, and awareness' },
+				{ icon: 'icon_fish_sharing.svg', title: 'WE PARTICIPATE', desc: 'In rehabilitation, environmental clean-up, and our community' },
+			]
+		}
+	}
 }

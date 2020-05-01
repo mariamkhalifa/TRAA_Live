@@ -89,7 +89,7 @@
     align-items: center;
     p {
         color: white;
-        background-color: $dark-green;
+        background-color: $olive-green;
         padding: 30px !important;
         width: 70%;
         margin-left: auto;
@@ -121,7 +121,7 @@
 @media screen and (min-width: 699px) {
 
 	.addressesCon:first-child {
-		border-right: #666 2px solid;
+		border-right: $dark-grey 2px solid;
 	}
 
 	#mainContact p {

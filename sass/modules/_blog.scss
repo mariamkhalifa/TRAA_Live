@@ -39,7 +39,7 @@
     align-items: center;
     font-size: 12px;
     margin-top: 20px;
-    color: #587021;
+    color: $olive-green;
 }
 
 .blogDateIcon {
@@ -69,7 +69,7 @@
 
 .blogPostIcon {
     /* put icon in div, let it define height*/
-    background-color: #587021;
+    background-color: $olive-green;
     width: 60px;
     height: 60px;
     border-radius: 60px;
@@ -85,7 +85,7 @@
     flex-direction: column;
     box-shadow: 0px 4px 7.68px 0.32px rgba(31, 29, 30, 0.34);
     background-color: #fff;
-    border-top: #587021 solid 20px;
+    border-top: $olive-green solid 20px;
     padding: 35px 10px;
     text-align: justify;
 }
@@ -96,7 +96,7 @@
 
 .post a {
     font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
-    color: #587021;
+    color: $olive-green;
     font-size: 23px;
     font-weight: bold;
     margin-top: 20px;
@@ -108,7 +108,7 @@
 
 .postContent1{
     font-size: 14px;
-    color: #999;
+    color: $light-grey;
     padding: 0px 0px 0px 0px;
     line-height: 15px;
     margin-top: 10px;
@@ -123,7 +123,7 @@
     margin-top: 20px;
     line-height: 15px;
     font-size: 14px;
-    color: #999;
+    color: $light-grey;
 }
 
 .postContent2 img {
@@ -153,7 +153,7 @@
 #blogLinks a {
     font-family: 'Lato', 'Open Sans', 'Arial', sans-serif;
     text-decoration: none;
-    color: #666;
+    color: $dark-grey;
     margin-top: 10px;
     margin-left: 20px;
     font-size: 16px;
@@ -173,7 +173,7 @@
 .postLinkImage {
     width: 40px;
     height: 40px;
-    background-color: #666;
+    background-color: $dark-grey;
 }
 
 #archives {

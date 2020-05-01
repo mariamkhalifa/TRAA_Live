@@ -108,7 +108,7 @@
 #merchForm input[type="number"] {
     height: 40px;
     width: 50px;
-    border: 2px #587021 solid;
+    border: 2px $olive-green solid;
     border-radius: 20px;
     text-align: center;
     font-size: 18px;
@@ -230,7 +230,7 @@
 
 	.zoomIcon {
 		font-size: 1em;
-		color: #666;
+		color: $dark-grey;
 		display: inline;
 		margin-left: 10px;
 	}

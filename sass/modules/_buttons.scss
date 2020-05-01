@@ -38,12 +38,12 @@ btnCon {
 }
 
 .dark {
-	background-color: #92bd2f;
+	background-color: $green;
 	color: #fff;
 }
 
 .light {
-	background-color: #666;
+	background-color: $dark-grey;
 	color: #fff;
 }
 
@@ -59,13 +59,13 @@ btnCon {
 
 .btnTop i {
 	font-size: 6em;
-	color: #587021;
+	color: $olive-green;
 }
 
 .btnTop p {
 	font-size: 12px;
 	text-transform: uppercase;
-	color: #587021;
+	color: $olive-green;
 	font-weight: bold;
 	text-align: center;
 }
@@ -249,7 +249,7 @@ btnCon {
 
 		/*effect works best on white background (putting it in container ensures white background)*/
 		background-color: #fff;
-		border: 1px #92bd2f solid;
+		border: 1px $green solid;
 	}
 
 	.btnAnimateConTop {
@@ -258,7 +258,7 @@ btnCon {
 	}
 
 	.btnAnimateOverlay {
-		background-color: #587021;
+		background-color: $olive-green;
 		left: 0;
 		right: 0;
 		bottom: 0;
@@ -274,7 +274,7 @@ btnCon {
 	}
 
 	.btnAnimateOverlay2 {
-		background-color: #587021;
+		background-color: $olive-green;
 		transition: .3s ease;
 		transition-delay: .15s;
 	}

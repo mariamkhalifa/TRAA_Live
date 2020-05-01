@@ -39,7 +39,7 @@
 
 .hamburger {
 	font-size: 40px;
-	color: #587021;
+	color: $olive-green;
 	transition: all .2s ease-in-out;
 }
 
@@ -74,12 +74,12 @@
 	text-decoration: none;
 	font-size: 27px;
 	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
-	color: #587021;
+	color: $olive-green;
 	transition: all ease;
 }
 
 #mainNav.slideToggle a:focus {
-	color: #92bd2f;
+	color: $green;
 }
 
 .menuBtnCon {
@@ -92,7 +92,7 @@
 }
 
 .subMenuArrowMobile {
-	color: #999;
+	color: $light-grey;
 	font-weight: bold;
 	cursor: pointer;
 	font-size: 2.5em;
@@ -128,11 +128,11 @@
 }
 
 .subMenuItems a {
-	color: #666 !important;
+	color: $dark-grey !important;
 }
 
 .navOverlay {
-	background-color: #587021;
+	background-color: $olive-green;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -194,7 +194,7 @@
 		padding: 15px 45px 15px 15px;
 		justify-content: flex-end;
 		box-sizing: border-box;
-		background-color: #587021;
+		background-color: $olive-green;
 /*		flex-basis: 1 1 960px;*/
 		top: 0;
 		right: 0;
@@ -237,7 +237,7 @@
 
 	#mainNav ul li:first-child {
 		order: 3;
-		color: #92bd2f;
+		color: $green;
 	}
 
 	/*
@@ -266,7 +266,7 @@
 
 	#navJoin {
 		color: #fff !important;
-		background-color: #92bd2f !important;
+		background-color: $green !important;
 		padding: 20px 30px !important;
 		margin-left: 20px;
 	}
@@ -278,7 +278,7 @@
 	#mainNav ul li a {
 		text-decoration: none;
 		font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
-		color: #587021;
+		color: $olive-green;
 		transition: all .5s ease;
 		font-size: 24px;
 		padding: 65px 20px 65px 25px;
@@ -287,7 +287,7 @@
 
 	#mainNav ul li a:hover {
 		border-radius: 40px;
-		color: #92bd2f;
+		color: $green;
 	}
 
 	#mainNav ul li > ul
@@ -344,21 +344,21 @@
 
 	#mainNav ul li:hover > ul li {
 /*		padding: 20px 20px;*/
-		background-color: #92bd2f;
+		background-color: $green;
 		display: block;
 		text-align: center;
 		box-sizing: border-box;
-		border-bottom: 2px #587021 solid;
+		border-bottom: 2px $olive-green solid;
 		margin-bottom: 0 !important;
 	}
 
 	#mainNav ul li:active > ul li {
 /*		padding: 20px 20px;*/
-		background-color: #92bd2f;
+		background-color: $green;
 		display: block;
 		text-align: center;
 		box-sizing: border-box;
-		border-bottom: 2px #587021 solid;
+		border-bottom: 2px $olive-green solid;
 		margin-bottom: 0 !important;
 	}
 
@@ -381,11 +381,11 @@
 	}
 
 	.subMenu li a:hover {
-		color: #587021 !important;
+		color: $olive-green !important;
 	}
 
 	.subMenu li a:active {
-		color: #587021 !important;
+		color: $olive-green !important;
 	}
 
 	.subMenuArrowMobile {
@@ -394,7 +394,7 @@
 
 	.subMenuArrowDesktop {
 		display: block;
-		color: #999;
+		color: $light-grey;
 		font-weight: bold;
 		cursor: pointer;
 		font-size: 2.5em;
