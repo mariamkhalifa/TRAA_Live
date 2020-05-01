@@ -21,44 +21,42 @@
 <body>
 	<main id="app">
 	<div id="mainContainer">
-	<h1 class="hidden">TRAA Home</h1>
+		<h1 class="hidden">TRAA Home</h1>
 		<header id="mainHeader">
 			<nav id="headerSocialMedia">
 				<h2 class="hidden">Header Social Media Navigation</h2>
-					<ul>
-						<li><a href="https://www.facebook.com/groups/4TRAA/about/" target="_blank"><img src="images/social_facebook.svg" alt="Facebook"></a></li>
-						<li><a href="https://www.youtube.com/channel/UCAvK4qanj0dnwiMxB8wNraw/videos" target="_blank"><img src="images/social_youtube.svg" alt="Youtube"></a></li>
-						<li><a href="https://twitter.com/" target="_blank"><img src="images/social_twitter.svg" alt="Twitter"></a></li>
-						<li><a href="https://ca.linkedin.com/" target="_blank"><img src="images/social_linkedIn.svg" alt="LinkedIn"></a></li>
-					</ul>
+				<ul>
+					<li><a href="https://www.facebook.com/groups/4TRAA/about/" target="_blank"><img src="images/social_facebook.svg" alt="Facebook"></a></li>
+					<li><a href="https://www.youtube.com/channel/UCAvK4qanj0dnwiMxB8wNraw/videos" target="_blank"><img src="images/social_youtube.svg" alt="Youtube"></a></li>
+				</ul>
 			</nav>
 
 			<div id="mainHeaderCon">
-				<a href="index.php"><img src="images/logo.svg" id="headerLogo" alt="TRAA Logo"></a>
-				<i class="fa fa-bars hamburger"></i>
-				<nav id="mainNav">
-				<h2 class="hidden">Main Navigation</h2>
+				<router-link :to="{ name: 'home' }"><img src="images/logo.svg" id="headerLogo" alt="TRAA Logo"></router-link>
+				<i @click="expandBurger" class="fa fa-bars hamburger" :class="{ 'expanded' : burger }"></i>
+				<nav id="mainNav" :class="{ 'slideToggle' : burger }">
+					<h2 class="hidden">Main Navigation</h2>
 					<ul>
-						<li><a id="navJoin" href="join.php">MEMBERSHIP</a></li>
+						<li><router-link id="navJoin" :to="{ name: 'membership' }">Membership</router-link></li>
 						<li>
-							<div class="menuBtnCon"><a href="about.php">WHO WE ARE</a>
-							<i class="fa fa-angle-right subMenuArrowMobile"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
-							<ul class="subMenu">
-								<li class="subMenuItems"><a href="blog.php">BLOG</a></li>
+							<div class="menuBtnCon"><router-link :to="{ name: 'about' }">Who We Are</router-link>
+							<i @click="revealSubMenu1" class="fa fa-angle-right subMenuArrowMobile" :class="{ 'rotated' : submenu1 }"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
+							<ul class="subMenu" :class="{ 'expanded' : submenu1 }">
+								<li class="subMenuItems"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
 							</ul>
 						</li>
 						<li>
-							<div class="menuBtnCon"><a href="projects.php">OUR WORK</a>
-							<i class="fa fa-angle-right subMenuArrowMobile"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
-							<ul class="subMenu">
-								<li class="subMenuItems"><a href="merch.php">MERCHANDISE</a></li>
-								<li class="subMenuItems"><a href="#">EVENTS</a></li>
-								<li class="subMenuItems"><a href="#">EDUCATION</a></li>
+							<div class="menuBtnCon"><router-link :to="{ name: 'projects' }">Our Work</router-link>
+							<i @click="revealSubMenu2" class="fa fa-angle-right subMenuArrowMobile" :class="{ 'rotated' : submenu2 }"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
+							<ul class="subMenu" :class="{ 'expanded' : submenu2 }">
+								<li class="subMenuItems"><router-link :to="{ name: 'merch' }">Merchendise</router-link></li>
+								<li class="subMenuItems"><router-link :to="{ name: 'events' }">Events</router-link></li>
+								<li class="subMenuItems"><router-link :to="{ name: 'education' }">Education</router-link></li>
 							</ul>
 						</li>
-						<li><a href="contact.php">CONTACT</a></li>
+						<li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
 					</ul>
-				<div class="navOverlay"></div>
+					<div class="navOverlay"></div>
 				</nav>
 			</div>
 		</header>
@@ -73,7 +71,7 @@
 		<div id="mainFooterCon">
 			<div id="newsSocCon">
 				<section id="newsletter">
-				<h3>Keep In Touch</h3>
+					<h3>Keep In Touch</h3>
 					<p>Subscribe to get updates about the TRAA and our newsletter. It’s FREE!</p>
 					<form action="form.php" method="POST" autocomplete="off">
 	                    <input class="text" type="text" required id="name" placeholder="Enter your Email" name="email"/>
@@ -91,8 +89,6 @@
 					<ul>
 						<li><a href="https://www.facebook.com/groups/4TRAA/about/" target="_blank"><img src="images/social_facebook.svg" alt="Facebook"></a></li>
 						<li><a href="https://www.youtube.com/channel/UCAvK4qanj0dnwiMxB8wNraw/videos" target="_blank"><img src="images/social_youtube.svg" alt="Youtube"></a></li>
-						<li><a href="https://twitter.com/" target="_blank"><img src="images/social_twitter.svg" alt="Twitter"></a></li>
-						<li><a href="https://ca.linkedin.com/" target="_blank"><img src="images/social_linkedIn.svg" alt="LinkedIn"></a></li>
 	              	</ul>
 				</nav>
 			</div>
@@ -101,36 +97,36 @@
 			<h3>Contact Us</h3>
 				<p>We meet every second Wednesday at 790 Southdale Road East<br> London, ON N6E 1A8 </p>
 				<p>Phone: <a href="tel:519-681-2370">(519) 681-2370</a></p>
-				<p><a href="contact.php">Send Us a Message ></a></p>
+				<p><router-link @click="navTo" :to="{ name: 'contact' }">Send Us a Message</router-link></p>
 			</section>
 
 			<nav id="mainFooterNav">
 			<h3>Navigation</h3>
 				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="about.php">Who We Are</a></li>
-					<li><a href="blog.php">Blog</a></li>
-					<li><a href="projects.php">Our Work</a></li>
-					<li><a href="products.php">Products</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="#">Education</a></li>
-					<li><a href="contact.php">Contact</a></li>
+					<li><router-link @click="navTo" :to="{ name: 'home' }">Home</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'about' }">Who We Are</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'blog' }">Blog</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'projects' }">Our Work</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'merch' }">Merchendise</router-link></li>
+					<li><router-link @click="navTo":to="{ name: 'events' }">Events</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'education' }">Education</router-link></li>
+					<li><router-link @click="navTo" :to="{ name: 'contact' }">Contact</router-link></li>
 				</ul>
 			</nav>
 			
 			<section id ="actionBtns" class="btnCon">
 				<h3 class="hidden">Call to Action Buttons</h3>
-				<a href="join.php" class="btnLarge dark">MEMBERSHIP</a>
-				<a href="tel:519-681-2370" class="btnLarge dark">CALL US (519) 681-2370</a>
-				<a href="contact.php" class="btnLarge dark">SEND US A MESSAGE ></a>
+				<router-link @click="navTo" :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link>
+				<a href="tel:519-681-2370" class="btnLarge dark">Call Us (519) 681-2370</a>
+				<router-link @click="navTo" :to="{ name: 'contact' }" class="btnLarge dark">Send Us a Message</router-link>
 			</section>
 			
 			<section id="mainFooterJoin">
-			<h3 class="hidden">Join Us Button</h3>
+				<h3 class="hidden">Join Us Button</h3>
 				<img id="mainFooterLogo" src="images/logo.svg" alt="Logo">
 
 				<div class="btnAnimateCon">
-					<a href="join.php" class="btnLarge dark">MEMBERSHIP</a>
+					<router-link @click="navTo" :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link>
 					<a href="join.php" class="btnAnimateOverlay"></a>
 					<a href="join.php" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 				</div>
