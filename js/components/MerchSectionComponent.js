@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             title: 'Our Products',
-            text: 'Check out our merch. From stickers for your gear. to notepads and keychains. All profits help fund our projects.',
+            text: 'Check out our merch. From stickers for your gear, to notepads and keychains. All profits help fund our projects.',
             smallImg: 'products_gallery_reel.jpg',
             largeImg: 'products_large_reel.jpg'
         }
