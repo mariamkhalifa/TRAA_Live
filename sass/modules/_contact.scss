@@ -73,29 +73,13 @@
     align-items: stretch;
 }
 
-.msg-popover {
-    display: none;
+.formMsg {
+    font-size: 14px;
+    color: $olive-green;
 }
 
-.msg-popover.show {
-    position: absolute;
-    z-index: 10;
-    background-color: rgba(#000000, .7);
-    width: 100%;
-    height: 100vh;
-    padding: 40px;
-    align-self: center;
-    display: grid;
-    align-items: center;
-    p {
-        color: white;
-        background-color: $olive-green;
-        padding: 30px !important;
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 20px;
-    }
+.error {
+    color: salmon;
 }
 
 #mapArea {
