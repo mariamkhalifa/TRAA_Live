@@ -116,9 +116,9 @@ export default {
             
 			<div class="btnCon">
 				<div class="btnAnimateCon">
-					<a href="blog.html" class="btnSmall light">SEE BLOG</a>
-					<a href="blog.html" class="btnAnimateOverlay"></a>
-					<a href="blog.html" class="btnAnimateOverlay btnAnimateOverlay2"></a>
+					<router-link :to="{ name: 'blog' }" class="btnSmall light">SEE BLOG</router-link>
+					<router-link :to="{ name: 'blog' }" class="btnAnimateOverlay"></router-link>
+					<router-link :to="{ name: 'blog' }" class="btnAnimateOverlay btnAnimateOverlay2"></router-link>
 				</div>
 			</div>
 		</section>
