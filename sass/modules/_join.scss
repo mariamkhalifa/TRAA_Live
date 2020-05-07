@@ -43,7 +43,7 @@
 }
 
 #joinInfo p {
-	font-family: 'Abolition', 'Arial Bold', 'Gill Sans', sans-serif;
+	font-family: $abolition;
 	color: #fff;
 	font-size: 24px;
 	text-align: center;
@@ -53,14 +53,15 @@
 
 #joinInfo ul {
 	 list-style-image: url(../images/check.png);
-	 /*list-style-position: inside;*/
+	 //list-style-position: inside;
 	 /*margin-left: 60px;*/
-	 margin: 0 auto;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
 	 padding-left: 60px;
 }
 
 #joinInfo ul li {
-	margin: 0 auto;
 	color: #fff;
 	padding: 3px 20px;
 }
@@ -139,6 +140,7 @@
 }
 
 #membershipForm label {
+	font-family: $abolition;
 	text-transform: uppercase;
 	font-size: 18px;
 	display: block;
