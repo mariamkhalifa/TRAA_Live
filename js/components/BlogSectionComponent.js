@@ -114,7 +114,7 @@ export default {
 				</div> <!-- end newsConColumn3 -->
             </div>
             
-			<div class="btnCon">
+			<div @click="navToBlog" class="btnCon">
 				<div class="btnAnimateCon">
 					<router-link :to="{ name: 'blog' }" class="btnSmall light">SEE BLOG</router-link>
 					<router-link :to="{ name: 'blog' }" class="btnAnimateOverlay"></router-link>
@@ -129,5 +129,11 @@ export default {
             title: 'Latest News',
             intro: 'Events and activities are what the TRAA’s all about! See our blog for past events.'
         }
-    }
+	},
+	
+	methods: {
+		navToBlog() {
+			gsap.to(window, {duration: 1, scrollTo: {y:0}});
+		}
+	}
 }
