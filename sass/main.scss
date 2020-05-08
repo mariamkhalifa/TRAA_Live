@@ -46,6 +46,10 @@ p {
 	line-height: 18px;
 }
 
+li {
+	font-family: $lato;
+}
+
 input, textarea {
 	color: $light-grey;
 	font-family: $lato;

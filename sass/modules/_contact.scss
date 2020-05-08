@@ -82,13 +82,11 @@
     color: salmon;
 }
 
-#mapArea {
-	margin: 80px auto;
-}
-
-#mapArea iframe {
-	width: 100%;
-	height: 300px;
+#map {
+    margin-top: 60px;
+    width: 100%;
+    height: 50vw;
+    margin-bottom: 60px;
 }
 
 /*#eventsWidget {
@@ -96,14 +94,12 @@
 }*/
 
 @media screen and (min-width: 518px) {
-
 	.nameEmailCon input[type="text"]{
 		margin-right: 15px;
 	}
 }
 
 @media screen and (min-width: 699px) {
-
 	.addressesCon:first-child {
 		border-right: $dark-grey 2px solid;
 	}
@@ -117,16 +113,33 @@
 @media screen and (min-width: 768px) {
     .heroContact {
         background-image: linear-gradient(rgba(79,100,29,.2), rgba(79,100,29,.2)), url(../images/contact_hero.jpg);
-        }
+    }
     
-        #mainContact {
-            padding: 0px 40px;
-        }
+    #mainContact {
+        padding: 0px 40px;
+    }
     
-        #addresses {
+    #addresses {
         display: flex;
         flex-wrap: nowrap;
-        }
+    }
+
+    #contactForm {
+        display: grid;
+        grid-template-areas: 'a a'
+                             'b c'
+                             'd d'
+                             'e e'
+                             'f f';
+        grid-column-gap: 10px;
+        .formMsg { grid-area: a; }
+        #nameContact { grid-area: b; }
+        #email { grid-area: c; }
+        #subject { grid-area: d; }
+        #message { grid-area: e; }
+        .btnCon { grid-area: f; }
+    }
+
 }
 
 @media screen and (min-width: 938px) {

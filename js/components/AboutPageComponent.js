@@ -2,6 +2,7 @@ import MissionComponent from "./MissionComponent.js"
 import HistoryComponent from "./HistoryComponent.js"
 import MembersComponent from "./MembersComponent.js"
 import TopBtnComponent from "./TopBtnComponent.js"
+import ScrollDownComponent from "./ScrollDownComponent.js"
 
 export default {
     name: 'about',
@@ -10,7 +11,7 @@ export default {
     <div>
         <section class="hero heroAbout">
             <h2>{{ title }}</h2>
-            <i class="fa fa-angle-down downArrow"></i>
+            <scrolldown/>
         </section>
 
         <div class="container">
@@ -125,6 +126,7 @@ export default {
     },
 
     components: {
+        scrolldown: ScrollDownComponent,
         mission: MissionComponent,
         history: HistoryComponent,
         member: MembersComponent,

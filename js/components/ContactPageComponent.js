@@ -1,3 +1,4 @@
+import ScrollDownComponent from "./ScrollDownComponent.js"
 import ContactFormComponent from "./ContactFormComponent.js"
 import EventsWidgetComponent from "./EventsWidgetComponent.js"
 import MapAPIComponent from "./MapAPIComponent.js"
@@ -9,14 +10,14 @@ export default {
     <div>
         <section class="hero heroContact">
 			<h2 id="contact-h2">{{ pagetitle }}</h2>
-			<i class="fa fa-angle-down downArrow"></i>
+			<scrolldown/>
 		</section>
 
 		<section id="mainContact">
 			<h3>{{ introtitle }}</h3>
 			<p>{{ introtext }}</p>
 			<div id="announcement">
-				<div id="close"><div id="circle">X</div></div>
+				<div @click="closeAnnouncement" id="close"><div id="circle">X</div></div>
 				<a href="#">{{ announcement }}</a>
 			</div>
 
@@ -57,10 +58,16 @@ export default {
     },
 
     components: {
+        scrolldown: ScrollDownComponent,
         contactform: ContactFormComponent,
         eventswidget: EventsWidgetComponent,
         googlemaps: MapAPIComponent
     },
 
+    methods: {
+        closeAnnouncement() {
+            document.querySelector('#announcement').style.display = 'none';
+        }
+    },
 
 }

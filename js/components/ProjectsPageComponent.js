@@ -1,3 +1,5 @@
+import ScrollDownComponent from "./ScrollDownComponent.js"
+
 export default {
     name: 'projects',
 
@@ -5,7 +7,7 @@ export default {
     <div>
         <section class="hero heroProjects">
             <h2>{{ title }}</h2>
-            <i class="fa fa-angle-down downArrow"></i>
+            <scrolldown/>
         </section>
 		
         <section id="donateBanner">
@@ -66,5 +68,9 @@ export default {
                 { title: 'Brook Trout Program', smallimg: 'projects_brown_trout_hatchery_small.jpg', largeimg: 'projects_brown_trout_hatchery.jpg', comingsoon: true },
             ]
         }
+    },
+
+    components: {
+        scrolldown: ScrollDownComponent
     }
 }

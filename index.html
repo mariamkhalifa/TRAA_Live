@@ -32,29 +32,29 @@
 			</nav>
 
 			<div id="mainHeaderCon">
-				<router-link :to="{ name: 'home' }"><img src="images/logo.svg" id="headerLogo" alt="TRAA Logo"></router-link>
+				<div @click="collapseBurger"><router-link :to="{ name: 'home' }"><img src="images/logo.svg" id="headerLogo" alt="TRAA Logo"></router-link></div>
 				<i @click="expandBurger" class="fa fa-bars hamburger" :class="{ 'expanded' : burger }"></i>
 				<nav id="mainNav" :class="{ 'slideToggle' : burger }">
 					<h2 class="hidden">Main Navigation</h2>
 					<ul>
-						<li><router-link id="navJoin" :to="{ name: 'membership' }">Membership</router-link></li>
+						<li @click="collapseBurger"><router-link id="navJoin" :to="{ name: 'join' }">Membership</router-link></li>
 						<li>
-							<div class="menuBtnCon"><router-link :to="{ name: 'about' }">Who We Are</router-link>
+							<div class="menuBtnCon"><div @click="collapseBurger"><router-link :to="{ name: 'about' }">Who We Are</router-link></div>
 							<i @click="revealSubMenu1" class="fa fa-angle-right subMenuArrowMobile" :class="{ 'rotated' : submenu1 }"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
 							<ul class="subMenu" :class="{ 'expanded' : submenu1 }">
-								<li class="subMenuItems"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
+								<li @click="collapseBurger" class="subMenuItems"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
 							</ul>
 						</li>
 						<li>
-							<div class="menuBtnCon"><router-link :to="{ name: 'projects' }">Our Work</router-link>
+							<div class="menuBtnCon"><div @click="collapseBurger"><router-link :to="{ name: 'projects' }">Our Work</router-link></div>
 							<i @click="revealSubMenu2" class="fa fa-angle-right subMenuArrowMobile" :class="{ 'rotated' : submenu2 }"></i><i class="fa fa-angle-right subMenuArrowDesktop"></i></div>
 							<ul class="subMenu" :class="{ 'expanded' : submenu2 }">
-								<li class="subMenuItems"><router-link :to="{ name: 'merch' }">Merchendise</router-link></li>
-								<li class="subMenuItems"><router-link :to="{ name: 'events' }">Events</router-link></li>
-								<li class="subMenuItems"><router-link :to="{ name: 'education' }">Education</router-link></li>
+								<li @click="collapseBurger" class="subMenuItems"><router-link :to="{ name: 'merch' }">Merchendise</router-link></li>
+								<li @click="collapseBurger" class="subMenuItems"><router-link :to="{ name: 'events' }">Events</router-link></li>
+								<li @click="collapseBurger" class="subMenuItems"><router-link :to="{ name: 'education' }">Education</router-link></li>
 							</ul>
 						</li>
-						<li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
+						<li @click="collapseBurger"><router-link :to="{ name: 'contact' }">Contact</router-link></li>
 					</ul>
 					<div class="navOverlay"></div>
 				</nav>
@@ -63,8 +63,6 @@
 	</div>
 
 	<router-view></router-view>
-
-	
 
 	<footer id="mainFooter">
 		<h2 class="hidden">Footer Navigation</h2>
@@ -97,38 +95,38 @@
 			<h3>Contact Us</h3>
 				<p>We meet every second Wednesday at 790 Southdale Road East<br> London, ON N6E 1A8 </p>
 				<p>Phone: <a href="tel:519-681-2370">(519) 681-2370</a></p>
-				<p><router-link @click="navTo" :to="{ name: 'contact' }">Send Us a Message</router-link></p>
+				<p @click="navTo"><router-link :to="{ name: 'contact' }">Send Us a Message</router-link></p>
 			</section>
 
 			<nav id="mainFooterNav">
 			<h3>Navigation</h3>
 				<ul>
-					<li><router-link @click="navTo" :to="{ name: 'home' }">Home</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'about' }">Who We Are</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'blog' }">Blog</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'projects' }">Our Work</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'merch' }">Merchendise</router-link></li>
-					<li><router-link @click="navTo":to="{ name: 'events' }">Events</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'education' }">Education</router-link></li>
-					<li><router-link @click="navTo" :to="{ name: 'contact' }">Contact</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'home' }">Home</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'about' }">Who We Are</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'blog' }">Blog</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'projects' }">Our Work</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'merch' }">Merchendise</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'events' }">Events</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'education' }">Education</router-link></li>
+					<li @click="navTo"><router-link :to="{ name: 'contact' }">Contact</router-link></li>
 				</ul>
 			</nav>
 			
-			<section id ="actionBtns" class="btnCon">
+			<ul id ="actionBtns" class="btnCon">
 				<h3 class="hidden">Call to Action Buttons</h3>
-				<router-link @click="navTo" :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link>
-				<a href="tel:519-681-2370" class="btnLarge dark">Call Us (519) 681-2370</a>
-				<router-link @click="navTo" :to="{ name: 'contact' }" class="btnLarge dark">Send Us a Message</router-link>
-			</section>
+				<li @click="navTo"><router-link :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link></li>
+				<li><a href="tel:519-681-2370" class="btnLarge dark">Call Us (519) 681-2370</a></li>
+				<li @click="navTo"><router-link :to="{ name: 'contact' }" class="btnLarge dark">Send Us a Message</router-link></li>
+			</ul>
 			
 			<section id="mainFooterJoin">
 				<h3 class="hidden">Join Us Button</h3>
 				<img id="mainFooterLogo" src="images/logo.svg" alt="Logo">
 
-				<div class="btnAnimateCon">
-					<router-link @click="navTo" :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link>
-					<a href="join.php" class="btnAnimateOverlay"></a>
-					<a href="join.php" class="btnAnimateOverlay btnAnimateOverlay2"></a>
+				<div @click="navTo" class="btnAnimateCon">
+					<router-link :to="{ name: 'join' }" class="btnLarge dark">Membership</router-link>
+					<a href="#" class="btnAnimateOverlay"></a>
+					<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 				</div>
 			</section>
 		</div>
@@ -145,7 +143,7 @@
 	</main>
 	
 	<!-- JavaScript -->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6CIgAoZRfDd6Ank8YQEfhQGkfT0UgYhI"
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv_AkIxGBO7jv89omTHms0BJJ1n8J0sK0"
     type="text/javascript"></script>
 	<script src="js/main.js" type="module"></script>
 </body>
