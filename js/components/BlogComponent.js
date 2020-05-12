@@ -17,8 +17,7 @@ export default {
                 <div class="postTags">
                     <ul>
                         <li><span class="blogDateIcon"></span>{{ post.blog_date }}</li>
-                        <li><span class="blogCategoriesIcon"></span>CATEGORIES</li>
-                        <!-- <li><span class="blogCommentsIcon"></span>3 COMMENTS</li> -->
+                        <li><span class="blogCategoriesIcon"></span>{{ post.categ_name }}</li>
                     </ul>
                 </div>
             </article>
