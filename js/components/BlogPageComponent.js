@@ -87,12 +87,12 @@ export default {
     },
 
     created() {
-        this.fetchBlog();
+		this.fetchBlog();
     },
 
     methods: {
         fetchBlog() {
-            let url = `./includes/index.php?tbl=tbl_blog`;
+            let url = `./includes/index.php?blog=true`;
 
             fetch(url)
             .then(res=>res.json())
@@ -101,6 +101,6 @@ export default {
                 this.blog = data;
             })
             .catch(err=>console.log(err))
-        }
+		}
     }
 }
