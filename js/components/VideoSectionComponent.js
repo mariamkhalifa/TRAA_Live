@@ -27,7 +27,7 @@ export default {
             fetch(url)
             .then(res=>res.json())
             .then(data=> {
-                console.log(data);
+                //console.log(data);
                 this.video = data[0];
             })
             .catch(err=>console.log(err))
