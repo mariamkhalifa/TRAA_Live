@@ -1,20 +1,20 @@
 export default {
     template: `
     <section id="impact">
-		<h2>{{ title }}</h2>
-		<p>{{ text1 }}</p>
-		<p>{{ text2 }}</p>
+		<h2>{{ impact.title }}</h2>
+		<p>{{ impact.text1 }}</p>
+		<p>{{ impact.text2 }}</p>
 		
-		<div class="btnCon">
+		<div @click="navTo" class="btnCon">
 			<div class="btnAnimateCon">
-				<a href="#" class="btnSmall dark">DONATE</a>
+				<a href="#" class="btnSmall dark">Donate</a>
 				<a href="#" class="btnAnimateOverlay"></a>
 				<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 			</div>
 			<div class="btnAnimateCon">
-				<a href="projects.html" class="btnSmall light">LEARN MORE</a>
-				<a href="projects.html" class="btnAnimateOverlay"></a>
-				<a href="projects.html" class="btnAnimateOverlay btnAnimateOverlay2"></a>
+				<router-link :to="{ name: 'projects' }" class="btnSmall light">Learn More</router-link>
+				<router-link :to="{ name: 'projects' }" class="btnAnimateOverlay"></router-link>
+				<router-link :to="{ name: 'projects' }" class="btnAnimateOverlay btnAnimateOverlay2"></router-link>
 			</div>
 		</div>
 	</section> 
@@ -22,9 +22,29 @@ export default {
 	
 	data() {
 		return {
-			title: 'Our Impact',
-			text1: 'Our work is what sets the TRAA apart from other clubs and organizations. You’ll find us right in the water clearing obstructions from streams, measuring returning salmonids & taking scale samples for DNA analysis, educating through trout hatchery tours & stream walks, being a voice for the Thames River watershed inhabitants...',
-			text2: 'The list goes on.'
+			impact: []
+		}
+	},
+
+	created() {
+		this.fetchImpact();
+	},
+
+	methods: {
+		fetchImpact() {
+			let url = `./includes/index.php?tbl=tbl_home_impact`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.impact = data[0];
+            })
+            .catch(err=>console.log(err))
+		},
+
+		navTo() {
+			gsap.to(window, {duration: 2, scrollTo: {y: 0}});
 		}
 	}
 }

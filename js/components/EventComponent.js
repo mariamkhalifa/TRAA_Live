@@ -5,12 +5,12 @@ export default {
         <li class="event">
             <div class="dateTitleCon">
                 <div class="date">
-                    <p class="day">{{ event.month }}</p>
-                    <p class="month">{{ event.day }}</p>
+                    <p class="day">{{ event.events_month }}</p>
+                    <p class="month">{{ event.events_day }}</p>
                 </div>
-                <p class="title">{{ event.title }}</p>
+                <p class="title">{{ event.events_title }}</p>
             </div>
-            <p class="eventDesc">{{ event.desc }}</p>
+            <p class="eventDesc">{{ event.events_desc }}</p>
         </li>
     `
 }

@@ -3,7 +3,7 @@ import EventComponent from "./EventComponent.js";
 export default {
     template: `
     <section id="eventsWidget">
-	    <h2>{{ title }}</h2>
+	    <h2>{{ title.title }}</h2>
 
 		<div id="scrollWrap">
 			
@@ -35,17 +35,41 @@ export default {
 
     data() {
         return {
-            title: 'Upcoming Events',
-            eventsdata: [
-                { day: '09', month: 'JAN', title: 'General Meeting', desc: `Happy New Year! We are meeting at 7:00pm at 790 Southdale Road to do awesome things.` },
-                { day: '06', month: 'FEB', title: 'Visit the hatchery', desc: `Come visit the hatchery from 10:00am to 3pm at 123 Fish Rd. and see our brown trout.` },
-                { day: '08', month: 'MAR', title: 'Brown Trout Program', desc: `We are proud to announce our newest project: the release of our brown trout.` },
-                { day: '26', month: 'MAR', title: 'Salmon Release', desc: `Did you know that the average size of the salmon we release is 40cm large?` }
-            ]
+            title: '',
+            eventsdata: []
         }
     },
 
+    created() {
+        this.fetchTitle();
+        this.fetchEvents();
+    },
+
     methods: {
+        fetchTitle() {
+            let url = `./includes/index.php?tbl=tbl_events_title`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.title = data[0];
+            })
+            .catch(err=>console.log(err))
+        },
+
+        fetchEvents() {
+            let url = `./includes/index.php?tbl=tbl_events`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.eventsdata = data;
+            })
+            .catch(err=>console.log(err))
+        },
+
         scrollLeft() {
             gsap.to('.eventsCon', .5, {left:'-270px'});
         },
