@@ -1,26 +1,50 @@
 export default {
     template: `
     <section id="sponsors">
-	    <h2>{{ title }}</h2>
-		<p>{{ text }}</p>
+	    <h2>{{ intro.title }}</h2>
+		<p>{{ intro.text }}</p>
 		<div class="sponRow">
             <img v-for="(sponsor, index) in sponsors" :key="index"
-            :src="'images/' + sponsor.img" :alt="sponsor.name">
+            :src="'images/' + sponsor.spon_img" :alt="sponsor.spon_name">
 		</div>			
 	</section>
     `,
 
     data() {
         return {
-            title: 'Sponsors',
-            text: 'The support of the following local area businesses is much appreciated:',
-            sponsors: [
-                { img: 'home_sponsor_melchers.jpg', name: 'Melchers Construction Limited' },
-                { img: 'home_sponsor_muma.jpg', name: 'Muma Manufacturing' },
-                { img: 'home_sponsor_guillevin.jpg', name: 'Guillevin International Co' },
-                { img: 'home_sponsor_tryRecycling.jpg', name: 'Try Recycling Inc' },
-                { img: 'home_sponsor_angling.jpg', name: 'Angling Sports' },
-            ]
+            intro: [],
+            sponsors: []
         }
+    },
+
+    created() {
+        this.fetchIntro();
+        this.fetchSponsors();
+    },
+
+    methods: {
+        fetchIntro() {
+            let url = `./includes/index.php?tbl=tbl_home_sponsors_intro`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.intro = data[0];
+            })
+            .catch(err=>console.log(err))
+        },
+
+        fetchSponsors() {
+            let url = `./includes/index.php?tbl=tbl_home_sponsors`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.sponsors = data;
+            })
+            .catch(err=>console.log(err))
+        },
     }
 } 

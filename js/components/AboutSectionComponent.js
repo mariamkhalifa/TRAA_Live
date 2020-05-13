@@ -57,7 +57,7 @@ export default {
             fetch(url)
             .then(res=>res.json())
             .then(data=> {
-                console.log(data);
+                //console.log(data);
                 this.about = data[0];
             })
             .catch(err=>console.log(err))
@@ -69,7 +69,7 @@ export default {
             fetch(url)
             .then(res=>res.json())
             .then(data=> {
-                console.log(data);
+                //console.log(data);
                 this.missions = data;
             })
             .catch(err=>console.log(err))

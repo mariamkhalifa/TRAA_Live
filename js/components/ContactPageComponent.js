@@ -9,27 +9,27 @@ export default {
     template: `
     <div>
         <section class="hero heroContact">
-			<h2 id="contact-h2">{{ pagetitle }}</h2>
+			<h2 id="contact-h2">{{ contact.page_title }}</h2>
 			<scrolldown/>
 		</section>
 
 		<section id="mainContact">
-			<h3>{{ introtitle }}</h3>
-			<p>{{ introtext }}</p>
+			<h3>{{ contact.intro_title }}</h3>
+			<p>{{ contact.intro_text }}</p>
 			<div id="announcement">
 				<div @click="closeAnnouncement" id="close"><div id="circle">X</div></div>
-				<a href="#">{{ announcement }}</a>
+				<a href="#">{{ contact.announcement }}</a>
 			</div>
 
 			<div id="addresses">
 				<div class="addressesCon">
-					<h4><span><img class="contactIcon" src="images/contact_location.svg" alt="Location Icon"></span>{{ generalmeeting }}</h4>
-					<p>{{ meetingtext }}</p>
+					<h4><span><img class="contactIcon" src="images/contact_location.svg" alt="Location Icon"></span>{{ contact.gen_meeting_title }}</h4>
+					<p>{{ contact.gen_meeting_text }}</p>
 				</div>
 
 				<div class="addressesCon">
-					<h4><span><img class="contactIcon" src="images/contact_mail.svg" alt="Mail Icon"></span>{{ mailingaddress }}</h4>
-					<p>{{ mailingaddresstext }}</p>
+					<h4><span><img class="contactIcon" src="images/contact_mail.svg" alt="Mail Icon"></span>{{ contact.mail_add_title }}</h4>
+					<p>{{ contact.mail_add_text }}</p>
 				</div>
 			</div>
       
@@ -46,14 +46,7 @@ export default {
 
     data() {
         return {
-            pagetitle: 'Contact Us',
-            introtitle: 'The TRAA Would Like To Hear From You',
-            introtext: `Need more information? Want to get involved? Please don't hesitate to contact us.`,
-            announcement: 'Get in touch with us at the next meeting. Check the events page for the next meeting location.',
-            generalmeeting: 'General Meetings',
-            meetingtext: 'Come to our meetings every second Wednesday of the month at 7:00pm at WOFGPA.',
-            mailingaddress: 'Mailings Address Only',
-            mailingaddresstext: 'Thames River Anglers Association 2202 Coronation Drive London, ON N6G 0B9',
+            contact: []
         }
     },
 
@@ -64,7 +57,23 @@ export default {
         googlemaps: MapAPIComponent
     },
 
+    created() {
+        this.fetchcontact();
+    },
+
     methods: {
+        fetchcontact() {
+            let url = `./includes/index.php?tbl=tbl_contact`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.contact = data[0];
+            })
+            .catch(err=>console.log(err))
+        },
+
         closeAnnouncement() {
             document.querySelector('#announcement').style.display = 'none';
         }
