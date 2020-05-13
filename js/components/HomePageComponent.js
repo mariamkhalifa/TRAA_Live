@@ -22,7 +22,7 @@ export default {
             <span class="welcomeGreen">A</span>ssociation</span></h2>
             
             <div id="welcomeDesc">	
-                <p>{{ intro }}</p>
+                <p>{{ intro.intro }}</p>
             </div>
         </section>
         
@@ -44,7 +44,25 @@ export default {
 
     data() {
         return {
-            intro: '"For the enhancement, protection and promotion of a viable, multi-species fishery within the Thames River watershed. Dedication today for tomorrow.”'
+            intro: ''
+        }
+    },
+
+    created() {
+        this.fetchIntro();
+    },
+
+    methods: {
+        fetchIntro() {
+            let url = `./includes/index.php?tbl=tbl_home_welcome`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.intro = data[0];
+            })
+            .catch(err=>console.log(err))
         }
     },
 

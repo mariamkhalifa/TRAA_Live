@@ -2,13 +2,13 @@ export default {
     template: `
 		<section id="about" class="container">
 			<picture>
-				<source media="(max-width: 600px)" srcset="images/home_about_small.jpg">
-				<img src="images/home_about.jpg" alt="River Image">
+				<source media="(min-width: 600px)" :srcset="'images/' + about.image_large">
+				<img :src="'images/' + about.image_small" alt="River Image">
 			</picture>
 
 			<div id="aboutCon">
-				<h2>{{ title }}</h2>
-				<p id="aboutDesc">{{ statement }}</p>
+				<h2>{{ about.title }}</h2>
+				<p id="aboutDesc">{{ about.statement }}</p>
 
 				<section id="statements">
 					<h3 class="hidden">Mission Statements</h3>
@@ -21,14 +21,14 @@ export default {
 									
 				</section>
 
-				<div class="btnCon">
+				<div @click="navTo" class="btnCon">
 					<div class="btnAnimateCon">
-						<router-link :to="{ name: 'join' }" class="btnSmall dark">JOIN US</router-link>
+						<router-link :to="{ name: 'join' }" class="btnSmall dark">Join Us</router-link>
 						<router-link :to="{ name: 'join' }" class="btnAnimateOverlay"></router-link>
 						<router-link :to="{ name: 'join' }" class="btnAnimateOverlay btnAnimateOverlay2"></router-link>
 					</div>
 					<div class="btnAnimateCon">
-						<router-link :to="{ name: 'about' }" class="btnSmall light">LEARN MORE</router-link>
+						<router-link :to="{ name: 'about' }" class="btnSmall light">Learn More</router-link>
 						<router-link :to="{ name: 'about' }" class="btnAnimateOverlay"></router-link>
 						<router-link :to="{ name: 'about' }" class="btnAnimateOverlay btnAnimateOverlay2"></router-link>
 					</div>
@@ -40,13 +40,43 @@ export default {
 	
 	data() {
 		return {
-			title: 'About The TRAA',
-			statement: 'We are a “hands on” environmental group who likes to work at a grass roots level.',
-			missions: [
-				{ icon: 'icon_fish_protect.svg', title: 'WE PROTECT', desc: 'Our fishery, river fish, and environment' },
-				{ icon: 'icon_angler.svg', title: 'WE PROMOTE', desc: 'Safe fishing practices, pollution control, and awareness' },
-				{ icon: 'icon_fish_sharing.svg', title: 'WE PARTICIPATE', desc: 'In rehabilitation, environmental clean-up, and our community' },
-			]
+			about: [],
+			missions: []
+		}
+	},
+
+	created() {
+		this.fetchAbout();
+		this.fetchMissions();
+	},
+
+	methods: {
+		fetchAbout() {
+            let url = `./includes/index.php?tbl=tbl_home_about`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.about = data[0];
+            })
+            .catch(err=>console.log(err))
+		},
+		
+		fetchMissions() {
+            let url = `./includes/index.php?tbl=tbl_home_about_missions`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.missions = data;
+            })
+            .catch(err=>console.log(err))
+		},
+		
+		navTo() {
+			gsap.to(window, {duration: 2, scrollTo: {y: 0}});
 		}
 	}
 }

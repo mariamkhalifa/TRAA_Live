@@ -1,8 +1,8 @@
 export default {
     template: `
 		<section id="latestNews" class="container">
-		<h2>{{ title }}</h2>
-            <p id="latestNewsDesc">{{ intro }}</p>
+		<h2>{{ news.title }}</h2>
+            <p id="latestNewsDesc">{{ news.intro }}</p>
             
 			<div id="newsCon">
 	
@@ -32,17 +32,29 @@ export default {
 
     data() {
         return {
-            title: 'Latest News',
-			intro: 'Events and activities are what the TRAA’s all about! See our blog for past events.',
+            news: [],
 			blog: []
         }
 	},
 
 	created() {
+		this.fetchTitle();
 		this.fetchBlog();
 	},
 	
 	methods: {
+		fetchTitle() {
+			let url = `./includes/index.php?tbl=tbl_home_news`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log(data);
+                this.news = data[0];
+            })
+            .catch(err=>console.log(err))
+		},
+
 		fetchBlog() {
 			let url = `./includes/index.php?blog=true`;
 
