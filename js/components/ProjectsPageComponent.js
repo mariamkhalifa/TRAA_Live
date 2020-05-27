@@ -6,13 +6,13 @@ export default {
     template: `
     <div>
         <section class="hero heroProjects">
-            <h2>{{ title }}</h2>
+            <h2>{{ title.page_title }}</h2>
             <scrolldown/>
         </section>
 		
         <section id="donateBanner">
             <h2 class="hidden">Donate Banner</h2>
-            <p>{{ donate.text }}</p>
+            <p>{{ title.donate_text }}</p>
 
             <div class="btnAnimateCon btnDonate">
                 <router-link :to="{ name: 'donate' }" class="btnLarge dark">DONATE</router-link>
@@ -32,13 +32,13 @@ export default {
             
                 <div v-for="(project, index) in projects" :key="index" class="animationCon project">
                     <picture class="project-img">
-                        <source :srcset="'images/' + project.largeimg" media="(min-width:601px)">
-                        <img :src="'images/' + project.smallimg" alt="">
+                        <source :srcset="'images/' + project.project_largeimg" media="(min-width:601px)">
+                        <img :src="'images/' + project.project_smallimg" alt="">
                     </picture>
-                    <h3 class="project-title">{{ project.title }}</h3>
-                    <div v-if="project.animation"class="animationOverlay"></div>
-                    <div v-if="project.animation" class="animationOverlay animationOverlay2"></div>
-                    <div v-if="project.comingsoon" class="btnAnimateCon swing">
+                    <h3 class="project-title">{{ project.project_title }}</h3>
+                    <div v-if="project.project_animation == '1'" class="animationOverlay"></div>
+                    <div v-if="project.project_animation == '1'" class="animationOverlay animationOverlay2"></div>
+                    <div v-if="project.project_comingsoon == '1'" class="btnAnimateCon swing">
                         <div class="btnLarge light">Coming Soon</div>
                         <div class="btnAnimateOverlay"></div>
                         <div class="btnAnimateOverlay btnAnimateOverlay2"></div>
@@ -56,17 +56,39 @@ export default {
 
     data() {
         return {
-            title: 'Projects',
-            donate: {
-                text: `Want to help out in TRAA's most vital projects?`,
-            },
+            title: [],
+            projects: []
+        }
+    },
 
-            projects: [
-                { title: 'Trout Hatchery', smallimg: 'projects_hatchery_small.jpg', largeimg: 'projects_hatchery.jpg', animation: true },
-                { title: 'Salmonid Monitoring Program', smallimg: 'projects_salmonid_monitoring_small.jpg', largeimg: 'projects_salmonid_monitoring.jpg', animation: true },
-                { title: 'Komoka Creek Hydrological Study', smallimg: 'projects_komoka_creek_small.jpg', largeimg: 'projects_komoka_creek.jpg', animation: true },
-                { title: 'Brook Trout Program', smallimg: 'projects_brown_trout_hatchery_small.jpg', largeimg: 'projects_brown_trout_hatchery.jpg', comingsoon: true },
-            ]
+    created() {
+        this.fetchProjectsTitle();
+        this.fetchProjects();
+    },
+
+    methods: {
+        fetchProjectsTitle() {
+            let url = `./includes/index.php?tbl=tbl_projects_title`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.title = data[0];
+            })
+            .catch(err=>console.log(err))
+        },
+
+        fetchProjects() {
+            let url = `./includes/index.php?projects=true`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.projects = data;
+            })
+            .catch(err=>console.log(err))
         }
     },
 

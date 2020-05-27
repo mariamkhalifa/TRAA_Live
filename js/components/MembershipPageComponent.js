@@ -78,24 +78,6 @@ export default {
 
 	</section>
 
-<!-- 	<section id="charts">
-		<h3>OUR DATA SPEAKS FOR ITSELF</h3>
-		<div id="chartRow">
-			<div class="chartCon">
-				<img class="chartRowImg" src="images/data_eggs.png" alt="Percentage of Hatched Eggs Chart">
-				<p>We successfully hatch 86% of the eggs we receive</p>
-			</div>
-			<div class="chartCon">
-				<img class="chartRowImg" src="images/data_electrofishing.png" alt="Trout Caught Across Ontario Chart">
-				<p>Percentage of Rainbow Trout caught across Ontario</p>
-			</div>
-		</div>
-		<div id="singleChart">
-			<img class="chartImgSingle" src="images/data_members.png" alt="Members Chart">
-			<p>Our members across the years</p>
-		</div>
-	</section> -->
-
 	<section id="paperForm">
 		<h3 class="hidden">Membership Paper Form</h3>
 		<div id="paperFormText">
@@ -104,9 +86,9 @@ export default {
 		</div>
 		<div class="btnCon">
 			<div class="btnAnimateCon">
-						<a href="#" class="btnLarge dark">APPLICATION PDF VERSION</a>
-						<a href="#" class="btnAnimateOverlay"></a>
-						<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
+				<a href="#" class="btnLarge dark">APPLICATION PDF VERSION</a>
+				<a href="#" class="btnAnimateOverlay"></a>
+				<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 			</div>
 		</div>
     </section>
