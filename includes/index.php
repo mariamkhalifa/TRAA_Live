@@ -7,6 +7,11 @@ if(isset($_GET['tbl'])) {
     $result = getAll($pdo, $tbl);
 }
 
+if(isset($_GET['projects'])) {
+    $tbl = 'tbl_projects';
+    $result = getProjects($pdo, $tbl);
+}
+
 if(isset($_GET['blog'])) {
     $args = array(
         'tbl1' => 'tbl_blog',
@@ -16,6 +21,11 @@ if(isset($_GET['blog'])) {
         'col2' => 'categ_id',
     );
     $result = getBlog($pdo, $args);
+}
+
+if(isset($_GET['newsletter'])) {
+    $email = trim($_POST['email']);
+    $result = subscribe($pdo, $email);
 }
 
 echo json_encode($result);

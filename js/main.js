@@ -5,6 +5,10 @@ const vm = new Vue ({
         burger: false,
         submenu1: false,
         submenu2: false,
+        input: {
+            email: ''
+        },
+        formmsg: ''
     },
 
     created() {
@@ -54,6 +58,29 @@ const vm = new Vue ({
 
         navTo() {
             gsap.to(window, {duration: 2, scrollTo: {y: 0}});
+        },
+
+        subscribe() {
+            if(this.input.email !== '') {
+                let url = './includes/index.php?newsletter',
+                    formData = new FormData(document.querySelector('#newsletterForm'));
+
+                formData.append('email', this.input.email);
+
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(formData)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    this.formmsg = data;
+                })
+                .catch(err => console.log(err))
+
+            } else {
+                this.formmsg = 'Please enter your email!';
+            }
         }
     },
 

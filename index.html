@@ -71,8 +71,9 @@
 				<section id="newsletter">
 					<h3>Keep In Touch</h3>
 					<p>Subscribe to get updates about the TRAA and our newsletter. It’s FREE!</p>
-					<form action="form.php" method="POST" autocomplete="off">
-	                    <input class="text" type="text" required id="name" placeholder="Enter your Email" name="email"/>
+					<p>{{ formmsg }}</p>
+					<form @submit.prevent="subscribe" id="newsletterForm" autocomplete="off">
+						<input v-model="input.email" class="text" type="text" id="name" placeholder="Enter your Email" name="email" aria-label="email"/>
 
 			            <div class="btnAnimateCon">
 							<input class="subBut dark" type="submit" name="submit" value=">"/>
