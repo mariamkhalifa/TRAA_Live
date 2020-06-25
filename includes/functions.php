@@ -88,6 +88,9 @@ function subscribe($conn, $email) {
             return $msg = 'Something went wrong with the subscription!';
         }
 
-        return $msg;
     }
+}
+
+function AddMember($conn, $args) {
+    
 }

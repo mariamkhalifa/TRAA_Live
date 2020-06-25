@@ -28,4 +28,14 @@ if(isset($_GET['newsletter'])) {
     $result = subscribe($pdo, $email);
 }
 
+if(isset($_GET['membership'])) {
+    $args = array(
+        'name' => trim($_POST['name']),
+        'email' => trim($_POST['email']),
+        'dob' => trim($_POST['dob']),
+        'phone' => trim($_POST['phone'])
+    );
+    $result = addMember($pdo, $args);
+}
+
 echo json_encode($result);

@@ -6,68 +6,49 @@ export default {
     template: `
     <div>
     <section class="hero heroJoin">
-		<h2>Membership</h2>
+		<h2>{{ title.page_title}}</h2>
 		<scrolldown/>
 	</section>
 
 	<section id="mainJoin">
-		<h2>TRAA MEMBERSHIP</h2>
-		<p>Participate, help out, have fun and give a little bit back to the Thames River watershed! <br>Join at the <span><a href="#">next TRAA meeting</a></span> or fill out the application below.</p>
+		<h2>{{ title.membership_title}}</h2>
+		<p>{{ title.membership_text}} <br>Join at the <span><a href="#">next TRAA meeting</a></span> or fill out the application below.</p>
 	</section>
 	
 	<section id="formCon">
 		<h2 class="hidden">Membership Info and Form</h2>
-		
-		<div id="joinProcess">
-			<div class="processOrder">
-				<div class="circle">1</div>
-				<p>PERSONAL INFO</p>
-			</div>
-			<div class="connector"></div>
-			<div class="processOrder">
-				<div class="circle">2</div>
-				<p>PAYMENT</p>
-			</div>
-			<div class="connector"></div>
-			<div class="processOrder">
-				<div class="circle">3</div>
-				<p>SUBMIT</p>	
-			</div>
-		</div>
 
 		<div id="infoAndForm">
 			<div id="priceCon">
-				<div id="membershipPrice">$25</div>
+				<div id="membershipPrice">{{ title.membership_price}}</div>
 				<div id="joinInfo">
-					<p>BEST VALUE DEAL!</p>
+					<p>{{ title.membership_tagline}}</p>
 					<ul>
-						<li>Annual plan</li>
-						<li>TRAA membership card</li>
-						<li>Share your membership with your family</li>
-						<li>Good standing as a TRAA member</li>
-						<li>Periodic updates about TRAA activities</li>
+						<li v-for="(info, index) in membership" :key="index">
+							{{ info.info_item}}
+						</li>
 					</ul>
 				</div>
 			</div>
 
 			<div id="joinForm">
-				<a href="#">Already A Member?</a>
 				<p>required fields *</p>
-				<form id="membershipForm" action="contact-form.php" method="post">
+				<form @submit.prevent="handleMembership" id="membershipForm">
 					<label>Name:*</label>
-					<input type="text" required id="nameContact" placeholder="e.g. John Smith" size="30">
+					<input v-model="input.name" type="text" required id="nameContact" placeholder="e.g. John Smith">
+					
 					<label>Email:*</label>
-					<input type="email" required id="email" placeholder="example@email.com" size="30">
-					<label>Confirm Email:*</label>
-					<input type="text" required id="subject" placeholder="example@email.com" size="30">
+					<input v-model="input.email" type="email" required id="email" placeholder="example@email.com">
+					
 					<label>Date of Birth:*</label>
-					<input type="text" required id="dateBirth" placeholder="yyyy-mm-dd" size="30">
+					<input v-model="input.dob" type="text" required id="dateBirth" placeholder="yyyy-mm-dd">
+					
 					<label>Phone:</label>
-					<input type="tel" id="phone" placeholder="555-555-5555" size="30" >
+					<input v-model="input.phone" type="tel" id="phone" placeholder="555-555-5555">
 					
 					<div class="btnCon">
 						<div class="btnAnimateCon">
-							<input type="submit" value="NEXT" class="btnLarge light">
+							<input type="submit" value="SUBMIT" class="btnLarge light">
 							<a href="#" class="btnAnimateOverlay"></a>
 							<a href="#" class="btnAnimateOverlay btnAnimateOverlay2"></a>
 						</div>
@@ -94,6 +75,57 @@ export default {
     </section>
     </div>
 	`,
+
+	data() {
+		return {
+			title: '',
+			membership: [],
+			input: {
+				name: '',
+				email: '',
+				phone: '',
+				dob: ''
+			}
+		}
+	},
+
+	created() {
+		this.fetchMembershipTitle();
+		this.fetchMembershipInfo();
+	},
+
+	methods: {
+		fetchMembershipTitle() {
+			let url = `./includes/index.php?tbl=tbl_membership_title`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.title = data[0];
+            })
+            .catch(err=>console.log(err))
+		},
+
+		fetchMembershipInfo() {
+			let url = `./includes/index.php?tbl=tbl_membership_info`;
+
+            fetch(url)
+            .then(res=>res.json())
+            .then(data=> {
+                //console.log(data);
+                this.membership = data;
+            })
+            .catch(err=>console.log(err))
+		},
+
+		handleMembership() {
+			if (this.input.name !== '' && this.input.email !== '' && this.input.dob !== '') {
+				let url = './includes/membership=true';
+				console.log("working");
+			}
+		}
+	},
 	
 	components: {
 		scrolldown: ScrollDownComponent
